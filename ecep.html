@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECEP · EstateClosers Executive Program · 90 days to your first commission · Batch 1, 20 seats</title>
+<meta name="description" content="The 90-day Train, Field, Earn program by a RERA-registered Bangalore brokerage. Live training, real site visits on live inventory, company leads. 20 seats per batch.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="theme-color" content="#060A14">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="ECEP · 90 days to your first commission">
+<meta property="og:description" content="The 90-day Train, Field, Earn program by a RERA-registered Bangalore brokerage. Live training, real site visits, company leads. 20 seats.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,82,500;0,82,800;1,82,800&family=JetBrains+Mono:wght@400;600&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#060A14;--panel:#0C1322;--panel2:#121C33;--line:#1D2A44;
+    --txt:#FFFFFF;--dim:#C4D2E8;--gold:#3D7BFF;--gold-dim:#2A4C9E;
+    --green:#3DD68C;--red:#E5484D;--radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  .bgfix{position:fixed;inset:0;background:#060A14;z-index:-1;pointer-events:none}
+  html{scroll-behavior:smooth;background:#060A14!important}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq-track{animation:none!important}}
+  body{background:#060A14!important;color:var(--txt);font-family:'Public Sans',system-ui,sans-serif;font-size:17.5px;font-weight:500;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:#fff}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 82;font-weight:800;line-height:1.02;letter-spacing:-.01em}
+  h1{font-size:clamp(2.5rem,8vw,4.6rem)}
+  h2{font-size:clamp(1.8rem,5.5vw,3rem);margin-bottom:1rem;text-align:center}
+  h1 em,h2 em{font-style:italic;color:var(--gold)}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+  p{max-width:60ch;margin-inline:auto}
+  .dim{color:var(--dim)}
+  .wrap{width:min(100% - 2.5rem,1060px);margin-inline:auto;text-align:center}
+  section{padding:4.5rem 0;border-top:1px solid var(--line)}
+  @media(max-width:640px){section{padding:3.2rem 0}}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--gold);color:#fff;font-weight:700;font-size:1.05rem;padding:1.05rem 1.6rem;border-radius:var(--radius);text-decoration:none;border:0;cursor:pointer;transition:transform .08s,filter .15s,box-shadow .2s;box-shadow:0 0 0 0 rgba(61,123,255,0)}
+  .btn:hover{filter:brightness(1.12);box-shadow:0 4px 24px rgba(61,123,255,.35)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+  .under{display:flex;flex-wrap:wrap;gap:.5rem 1.3rem;margin-top:.9rem;font-size:.85rem;color:var(--dim);justify-content:center}
+  .under span::before{content:"✓ ";color:var(--green)}
+  .scarce{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.05em;color:var(--gold);margin-top:1rem;max-width:none}
+  .scarce::before{content:"◆ "}
+
+  /* navbar */
+  .brand{display:flex;align-items:center;justify-content:space-between;padding:.7rem 2rem;background:rgba(255,255,255,.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.12);width:100%}
+  .brand img{height:50px;width:auto;filter:brightness(0) invert(1)}
+  .brand .nav-cta{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);padding:.55rem 1.1rem;border-radius:var(--radius);text-decoration:none;transition:filter .15s}
+  .brand .nav-cta:hover{filter:brightness(1.15)}
+
+  /* ribbon */
+  .ribbon{position:sticky;top:0;z-index:50;background:rgba(4,7,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:.55rem 1rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase}
+  .ribbon b{color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums}
+
+  /* hero */
+  .hero{border-top:0;padding:4.5rem 0 3.5rem;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(closest-side,rgba(46,107,255,.16),transparent 70%);pointer-events:none}
+  .hero::after{content:"";position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(closest-side,rgba(61,214,140,.06),transparent 70%);pointer-events:none}
+  .hero .wrap{position:relative;text-align:center}
+  .callout{display:inline-block;border:1px solid var(--gold-dim);background:rgba(46,107,255,.07);color:var(--gold);border-radius:999px;padding:.45rem 1.1rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin:0;max-width:none}
+  .hero .callout{margin-bottom:1.3rem;animation:fadeUp .6s ease-out}
+  .statline{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim);margin-bottom:1.8rem;letter-spacing:.04em;max-width:none}
+  .statline b{color:var(--txt);font-weight:600}
+  .hero h1{margin:0 auto 1.4rem;max-width:22ch;font-size:clamp(2.6rem,8.5vw,5.2rem)}
+  .hero .sub{font-size:1.18rem;color:var(--dim);margin:0 auto 2.2rem;max-width:58ch}
+  .hero .sub b{color:var(--txt)}
+  .vsl{position:relative;aspect-ratio:16/9;max-width:760px;margin:0 auto 1rem;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--gold-dim);box-shadow:0 0 0 1px rgba(46,107,255,.15),0 30px 70px -30px rgba(46,107,255,.35)}
+  .vsl iframe,.vsl video{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vsl-cap{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:2rem;max-width:none}
+  .vsl-cap::before{content:"▶ ";color:var(--gold)}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  /* stats grid */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.6rem}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stats div{background:var(--panel);padding:1.6rem 1.2rem;text-align:center;border-radius:var(--radius);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+  .stats div::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(61,123,255,.15),transparent 40%);animation:statSpin 6s linear infinite;opacity:0;transition:opacity .3s}
+  .stats div:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 8px 30px rgba(61,123,255,.2)}
+  .stats div:hover::before{opacity:1}
+  .stats .n{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--gold);line-height:1;position:relative;letter-spacing:.08em;z-index:1}
+  .stats .l{font-size:.9rem;color:var(--dim);margin-top:.45rem;line-height:1.35;position:relative;z-index:1}
+  .stats .n-rera{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:clamp(1.4rem,3.5vw,2rem);letter-spacing:.15em;color:var(--green)}
+  @keyframes statSpin{to{transform:rotate(360deg)}}
+  @keyframes countUp{from{opacity:0;transform:translateY(16px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .stats.visible div{animation:countUp .6s ease-out both}
+  .stats.visible div:nth-child(2){animation-delay:.12s}
+  .stats.visible div:nth-child(3){animation-delay:.24s}
+  .stats.visible div:nth-child(4){animation-delay:.36s}
+
+  /* marquee */
+  .marq{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0 1.1rem;background:var(--panel)}
+  .marq-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:.7rem}
+  .marq-track{display:flex;gap:2.6rem;width:max-content;animation:scroll 28s linear infinite;font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;color:#E4ECF9;white-space:nowrap}
+  .marq-track span:nth-child(even){color:var(--gold-dim);font-weight:400}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-align:center}
+  .kicker::before{content:"◆ "}
+
+  /* pain rows */
+  .pain{list-style:none;margin-top:1.6rem;max-width:680px;margin-inline:auto;text-align:left}
+  .pain li{padding:1rem 0 1rem 2.2rem;border-bottom:1px solid var(--line);position:relative;font-size:1.08rem;color:var(--dim)}
+  .pain li:last-child{border-bottom:0}
+  .pain li::before{content:"✗";position:absolute;left:0;color:var(--red);font-weight:700}
+  .pain b{color:var(--txt)}
+  .bigline{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.15;margin-top:2rem;max-width:26ch;margin-inline:auto}
+  .bigline em{font-style:italic;color:var(--gold)}
+
+  /* cinematic */
+  .cine{border-left:3px solid var(--gold);padding-left:1.6rem;max-width:640px;margin:1.8rem auto 0;text-align:left}
+  .cine p{color:var(--dim);font-size:1.12rem;line-height:1.7;margin-bottom:1.1rem;margin-inline:0}
+  .cine b{color:var(--txt)}
+  .cine .punch{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.5rem;color:var(--txt);line-height:1.2}
+  .cine .punch em{font-style:italic;color:var(--gold)}
+
+  /* phase cards */
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+  @media(max-width:760px){.phases{grid-template-columns:1fr}}
+  .phase{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:1.7rem 1.5rem;text-align:left;transition:border-color .3s,transform .3s,box-shadow .3s}
+  .phase:hover{border-color:var(--gold-dim);transform:translateY(-4px);box-shadow:0 8px 30px rgba(61,123,255,.15)}
+  .phase .ph-tag{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.08em;color:var(--gold);text-transform:uppercase}
+  .phase h3{font-size:1.45rem;margin:.5rem 0 .6rem}
+  .phase p{color:var(--dim);font-size:.97rem;margin-inline:0}
+  .phase ul{list-style:none;margin-top:.9rem}
+  .phase li{padding:.45rem 0;border-top:1px solid var(--line);font-size:.92rem;color:var(--dim)}
+  .phase li::before{content:"→ ";color:var(--gold)}
+
+  /* vs comparison */
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+  @media(max-width:760px){.vs{grid-template-columns:1fr}}
+  .vscol{border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem 1.6rem;background:var(--panel);text-align:left}
+  .vscol.win{border-color:var(--gold-dim);background:linear-gradient(180deg,#0C1734,var(--panel) 40%)}
+  .vscol h3{font-size:1.2rem;margin-bottom:1rem}
+  .vscol ul{list-style:none}
+  .vscol li{padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.97rem;color:var(--dim)}
+  .vscol li:last-child{border-bottom:0}
+  .vscol li b{color:var(--txt)}
+  .vscol .x::before{content:"✗ ";color:var(--red)}
+  .vscol .y::before{content:"✓ ";color:var(--green)}
+
+  /* math rows */
+  .mathrow{display:grid;grid-template-columns:64px 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid var(--line);max-width:720px;margin-inline:auto;text-align:left}
+  .mathrow:last-of-type{border-bottom:0}
+  .mathrow .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.6rem;color:var(--gold-dim)}
+  .mathrow h3{font-size:1.3rem;margin-bottom:.45rem}
+  .mathrow p{color:var(--dim);margin-inline:0}
+  .mathrow b{color:var(--txt)}
+  .blur{filter:blur(7px);user-select:none;pointer-events:none;color:var(--gold)}
+  .reveal{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--gold);letter-spacing:.05em}
+
+  /* price block */
+  .price{border:1px solid var(--gold-dim);border-radius:var(--radius);background:linear-gradient(180deg,#0C1734,var(--panel) 55%);padding:2.2rem 2rem;margin:2rem auto 0;max-width:560px}
+  .price .anchor{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--dim)}
+  .price .anchor s{opacity:.7}
+  .price .now{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(2.2rem,7vw,3.4rem);color:var(--gold);line-height:1;margin:.5rem 0}
+  .price .split{color:var(--dim);font-size:.95rem;margin-top:.4rem}
+  .price .split b{color:var(--txt)}
+
+  /* trainer */
+  .trainer-card{display:grid;grid-template-columns:220px 1fr;gap:2rem;align-items:start;margin:1.6rem auto 0;max-width:760px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:2rem;text-align:left}
+  @media(max-width:680px){.trainer-card{grid-template-columns:1fr;text-align:center}}
+  .trainer-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)}
+  .trainer-card .t-name{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.4rem;margin-bottom:.2rem}
+  .trainer-card .t-title{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+  .trainer-card .t-bio{color:var(--dim);font-size:.97rem;line-height:1.6}
+  .trainer-card .t-bio b{color:var(--txt)}
+
+  /* trainer stats */
+  .tstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.6rem}
+  @media(max-width:560px){.tstats{grid-template-columns:1fr}}
+  .tstats div{background:var(--panel);padding:1.2rem 1rem;text-align:center;border-radius:var(--radius);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+  .tstats div::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(61,123,255,.15),transparent 40%);animation:statSpin 6s linear infinite;opacity:0;transition:opacity .3s}
+  .tstats div:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 8px 30px rgba(61,123,255,.2)}
+  .tstats div:hover::before{opacity:1}
+  .tstats .n{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:1.5rem;color:var(--gold);position:relative;z-index:1}
+  .tstats .n-rera{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:1rem;letter-spacing:.1em;color:var(--green);position:relative;z-index:1}
+  .tstats .l{font-size:.82rem;color:var(--dim);margin-top:.3rem;position:relative;z-index:1}
+  .tstats.visible div{animation:countUp .6s ease-out both}
+  .tstats.visible div:nth-child(2){animation-delay:.12s}
+  .tstats.visible div:nth-child(3){animation-delay:.24s}
+
+  /* proof wall */
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.8rem}
+  @media(max-width:760px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+  .proof-grid figure{margin:0}
+  .proof-grid .ph{width:100%;aspect-ratio:4/3;border:1px dashed var(--line);border-radius:var(--radius);background:var(--panel);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:.82rem;text-align:center;padding:.8rem;transition:border-color .3s,transform .3s}
+  .proof-grid .ph:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
+  .proof-grid figcaption{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim);margin-top:.5rem;letter-spacing:.04em}
+  .proof-grid .future{border:1px dashed var(--gold-dim);background:linear-gradient(180deg,rgba(61,123,255,.08),var(--panel) 70%);color:var(--txt);font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.01em;box-shadow:inset 0 0 30px rgba(61,123,255,.07)}
+  .proof-grid .fcap{color:var(--gold)}
+
+  /* FAQ */
+  details{border-bottom:1px solid var(--line);max-width:720px;margin-inline:auto;text-align:left}
+  summary{cursor:pointer;list-style:none;padding:1.15rem 0;font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;gap:1rem}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:'Archivo',sans-serif;color:var(--gold);font-size:1.4rem;line-height:1;font-weight:800}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--dim);padding-bottom:1.2rem;margin-inline:0}
+  details b{color:var(--txt)}
+
+  /* steps */
+  .steps{list-style:none;counter-reset:s;margin-top:1.8rem;max-width:640px;margin-inline:auto;text-align:left}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:1.2rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{content:counter(s,decimal-leading-zero);font-family:'Archivo',sans-serif;font-weight:800;font-size:1.5rem;color:var(--gold)}
+  .steps b{display:block;margin-bottom:.2rem}
+  .steps p{color:var(--dim);font-size:.97rem;margin-inline:0}
+
+  /* form / apply */
+  #apply{background:var(--panel)}
+  form{display:grid;gap:.9rem;max-width:440px;margin:1.4rem auto 0}
+  label{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#D7E1F2;display:block;margin-bottom:.35rem;text-align:left}
+  input,select,textarea{width:100%;padding:.95rem 1rem;border-radius:var(--radius);border:1px solid var(--line);background:#0A1120;color:var(--txt);font:inherit;font-size:1rem}
+  textarea{min-height:96px;resize:vertical}
+  select option{color:#000}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+  form .btn{justify-self:center}
+  .msg{display:none;border-radius:var(--radius);padding:1rem 1.1rem;font-size:.95rem;margin-top:.3rem;border:1px solid var(--line);background:var(--panel2)}
+  .msg.show{display:block}
+  .msg.err{border-color:var(--red);color:var(--red)}
+  .msg.ok{border-color:var(--green);color:var(--green)}
+  .seatline{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim);margin-top:1.1rem;letter-spacing:.04em;max-width:none}
+  .seatline b{color:var(--gold)}
+  .ps{border-left:3px solid var(--gold);padding-left:1.3rem;margin-top:2.4rem;max-width:640px;margin-inline:auto;color:var(--dim);font-style:italic;text-align:left}
+  .ps b{color:var(--txt);font-style:normal}
+
+  /* guarantee */
+  .guar{border:1px solid var(--gold-dim);border-radius:var(--radius);background:linear-gradient(180deg,#0C1734,var(--panel) 55%);padding:2.2rem 2rem;margin:2rem auto 0;max-width:760px;text-align:left}
+  .guar h3{font-size:clamp(1.4rem,4vw,1.9rem);margin-bottom:.8rem}
+  .guar h3 em{font-style:italic;color:var(--gold)}
+  .guar p{color:var(--dim);margin-inline:0}
+  .guar b{color:var(--txt)}
+  .guar .seal{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+  .guar .seal::before{content:"◆ "}
+
+  /* sticky bar */
+  .sticky{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(4,7,15,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:.7rem 1rem;display:none;justify-content:space-between;align-items:center;gap:.8rem}
+  .sticky small{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim);line-height:1.4;font-variant-numeric:tabular-nums}
+  .sticky small b{color:var(--gold)}
+  .sticky .btn{padding:.7rem 1.1rem;font-size:.92rem;white-space:nowrap}
+  @media(max-width:640px){.sticky{display:flex}body{padding-bottom:4.4rem}}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2.4rem 0 3.2rem;font-size:.85rem;color:var(--dim);text-align:center}
+  footer p{max-width:none;margin-bottom:.6rem}
+  footer a{color:var(--dim)}
+  .endline{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-top:1.4rem}
+
+  /* count animation */
+  .count{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(2rem,7vw,3.2rem);color:var(--gold);font-variant-numeric:tabular-nums;margin:.5rem 0 1.4rem}
+</style>
+</head>
+<body>
+<div class="bgfix" aria-hidden="true"></div>
+
+<!-- ===== CONFIG ===== -->
+<script>
+  const BATCH_START_ISO = "2026-09-30T18:30:00+05:30";
+  const SEATS_TOTAL = 20;
+  const SEATS_TAKEN = 0;
+  const PAYMENT_LINK = "https://rzp.io/l/YOUR-ECEP-LINK";
+  const CAPTURE_ENDPOINT = "";
+  const WHATSAPP = "https://wa.me/919876543210";
+  const BILLED_LAST_MONTH = "₹42L";
+</script>
+
+<!-- ===== NAVBAR ===== -->
+<div class="brand">
+  <a href="/"><img src="logo.png" alt="EstateClosers"></a>
+  <a class="nav-cta" href="#apply"><i class="ri-file-edit-line"></i> Apply Now</a>
+</div>
+
+<!-- ===== RIBBON ===== -->
+<div class="ribbon">
+  <span>◆ ECEP Batch 1 · Bangalore</span>
+  <span>Batch starts in <b id="cd1">00:00</b></span>
+  <span><b>20</b> seats only</span>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <p class="callout">This page is for the ones who are done waiting</p>
+    <p class="statline"><b id="billHero">₹42L</b> billed by our brokerage last month · <b>RERA-registered</b> · <b>20 seats</b> per batch</p>
+    <h1>In 90 days, you close your first deal. <em>Or you stay exactly where you are.</em></h1>
+    <p class="sub">Those are the two roads. There is no third one. The EstateClosers Executive Program takes people with <b>zero real estate background</b> and puts them through 30 days of live training, 30 days in the field on <b>our live projects with our leads</b>, and 30 days closing their own pipeline, with the founder of a ₹42L/month brokerage standing next to them the whole way. <b>This is not a course. This is a door.</b></p>
+
+    <div class="vsl">
+      <iframe src="https://www.youtube.com/embed/YOUR_ECEP_VIDEO_ID?rel=0&modestbranding=1" title="Watch: how ECEP works" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="vsl-cap">Two minutes. Watch it like your next year depends on it</p>
+
+    <a class="btn" href="#apply"><i class="ri-edit-2-line"></i> Apply for Batch 1 →</a>
+    <div class="under"><span>Live cohort, not recordings</span><span>Real buyers, real site visits</span><span>Top performers get hired by us</span></div>
+
+    <div class="stats">
+      <div><div class="n" data-count="42" data-prefix="₹" data-suffix="L" id="billStat">₹42L</div><div class="l"><i class="ri-money-rupee-circle-line"></i> Billed by our brokerage last month</div></div>
+      <div><div class="n" data-count="90" data-suffix=" days">90</div><div class="l"><i class="ri-calendar-check-line"></i> Train, field, earn</div></div>
+      <div><div class="n" data-count="20">20</div><div class="l"><i class="ri-group-line"></i> Seats. We coach, we don't broadcast</div></div>
+      <div><div class="n n-rera">RERA</div><div class="l"><i class="ri-shield-check-line"></i> Registered brokerage · Karnataka</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marq">
+  <p class="marq-label" aria-hidden="true">◆ Developers whose projects we transact</p>
+  <div class="marq-track" aria-hidden="true">
+    <span>PRESTIGE</span><span>·</span><span>SOBHA</span><span>·</span><span>GODREJ</span><span>·</span><span>LODHA</span><span>·</span><span>ASSETZ</span><span>·</span><span>SATTVA</span><span>·</span><span>TATA</span><span>·</span><span>BIRLA</span><span>·</span><span>PURAVANKARA</span><span>·</span>
+    <span>PRESTIGE</span><span>·</span><span>SOBHA</span><span>·</span><span>GODREJ</span><span>·</span><span>LODHA</span><span>·</span><span>ASSETZ</span><span>·</span><span>SATTVA</span><span>·</span><span>TATA</span><span>·</span><span>BIRLA</span><span>·</span><span>PURAVANKARA</span><span>·</span>
+  </div>
+</div>
+
+<!-- ================= THE MIRROR ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Be honest with yourself for 60 seconds</p>
+    <h2>You already know something is <em>wrong.</em></h2>
+    <ul class="pain">
+      <li>Sunday evening arrives and something in your chest <b>tightens.</b> You've felt it for years. You've just stopped mentioning it.</li>
+      <li>Your appraisal letter says <b>8%</b> and you're supposed to say thank you. For a year of your life. Thank you.</li>
+      <li>People you know, people <b>no sharper than you</b>, are closing property deals in this city and earning in a month what you earn in a quarter. You've seen the car change. The house change. You told yourself it was luck.</li>
+      <li>Every layoff headline, you do the same silent calculation: <b>how many months of runway.</b> You've memorised the number. That's not a career. That's a countdown.</li>
+      <li>And the worst one: you know you're good with people. You know you could sell. <b>Nobody ever gave you the field to prove it.</b></li>
+    </ul>
+    <p class="bigline">It was never a talent problem. It was a <em>training and access</em> problem. And both of those are fixable in 90 days.</p>
+  </div>
+</section>
+
+<!-- ================= DAY 90 ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Now picture the other road</p>
+    <h2>Day 90 looks like <em>this.</em></h2>
+    <div class="cine">
+      <p>It's a Saturday. You're standing in a sales gallery you now know like your own living room. A family you've been guiding for three weeks walks back in, and the father, a man your father's age, <b>shakes your hand and says "let's do it."</b></p>
+      <p>You watch them sign. You watch the booking amount move. And you understand, physically, in your spine, that <b>a percentage of that number is yours</b>, because you made this happen. Not your manager. Not a system. You.</p>
+      <p>That evening the commission structure you saw on your enrollment call stops being a slide and becomes <b>arithmetic with your name on it.</b> You open the calculator on your phone, and then you close it, because you already know.</p>
+      <p class="punch">That feeling has a name. It's called <em>proof.</em> Proof that you were never the problem.</p>
+    </div>
+    <p style="margin-top:2rem"><a class="btn" href="#apply"><i class="ri-arrow-right-line"></i> I want day 90 → Apply</a></p>
+  </div>
+</section>
+
+<!-- ================= THE 3 PHASES ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">How we get you there</p>
+    <h2>30 / 30 / 30. <em>Train. Field. Earn.</em></h2>
+    <p class="dim">Courses sell you videos and vanish. We put you in front of real buyers, on real projects, with a real brokerage's name behind you, and we don't let go until you've closed.</p>
+    <div class="phases">
+      <div class="phase">
+        <span class="ph-tag"><i class="ri-fire-line"></i> Days 1–30 · The forge</span>
+        <h3>Train</h3>
+        <p>Live evening cohort with the founder. 12 sessions, 2 in-person Saturdays. You will be drilled, scored, and pushed. It will be uncomfortable. That's the point.</p>
+        <ul>
+          <li>The first-call script that gets a stranger to a site visit</li>
+          <li>The 12 objections that decide every deal, and your answers to them</li>
+          <li>Recorded drills, scored every week. Your growth, measured</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="ph-tag"><i class="ri-road-map-line"></i> Days 31–60 · The field</span>
+        <h3>Field</h3>
+        <p>You clear the readiness bar, and then it gets real: live buyers, live site visits, our inventory, our leads in your hands.</p>
+        <ul>
+          <li>Company leads assigned to you. We spend the marketing money, you do the closing</li>
+          <li>Senior closers shadow your first site visits, then debrief you like a fighter's corner</li>
+          <li>Weekly deal reviews on your actual pipeline, not theory</li>
+        </ul>
+      </div>
+      <div class="phase">
+        <span class="ph-tag"><i class="ri-trophy-line"></i> Days 61–90 · The proof</span>
+        <h3>Earn</h3>
+        <p>Your pipeline. Your closings. Your commission on every deal, structure agreed in writing before you paid a rupee.</p>
+        <ul>
+          <li>Founders on call when a closing is near. We show up for the kill</li>
+          <li>Your first cheque is the graduation ceremony</li>
+          <li>Top performers get hired straight into Estate Hive</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROMISE / NO PROMISE ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Read this twice</p>
+    <h2>What we promise. And what we <em>refuse to.</em></h2>
+    <div class="vs">
+      <div class="vscol win">
+        <h3><i class="ri-checkbox-circle-line" style="color:var(--green)"></i> Guaranteed, in writing</h3>
+        <ul>
+          <li class="y">Trained by <b>the owner of a working ₹42L/month brokerage</b>, live, all 90 days</li>
+          <li class="y">Field phase on <b>live projects with company-supplied leads</b></li>
+          <li class="y">A <b>measured path</b>: scored drills, a readiness bar, weekly deal reviews</li>
+          <li class="y">Commission on <b>every deal you close</b>, structure shown before payment</li>
+          <li class="y">Perform, and <b>we hire you ourselves</b></li>
+        </ul>
+      </div>
+      <div class="vscol">
+        <h3><i class="ri-close-circle-line" style="color:var(--red)"></i> Not here. Not ever</h3>
+        <ul>
+          <li class="x">Guaranteed income. <b>Closers earn. Passengers don't.</b></li>
+          <li class="x">Passive income fairy tales or "2 hours a week"</li>
+          <li class="x">A certificate that works so you don't have to</li>
+          <li class="x">A seat for anyone who can't give evenings + weekend field time</li>
+        </ul>
+      </div>
+    </div>
+    <p class="dim" style="margin-top:1.6rem">If the right column offends you, close this tab. We just saved you ₹25,000 and ourselves a headache. If the right column <b style="color:var(--txt)">excites</b> you, because it means the people around you will be real, then you're exactly who this was built for.</p>
+  </div>
+</section>
+
+<!-- ================= FIRST DEAL MATH ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The arithmetic</p>
+    <h2>One closing typically repays the fee <em>several times over.</em></h2>
+    <div class="mathrow"><div class="num">01</div><div><h3>What one closing pays you</h3><p>Your commission on a single average Bangalore closing: <span class="blur">₹92,000</span>. The exact structure, slabs and bonuses go on the table in your <b>enrollment call, before you pay.</b> We put it in writing. <span class="reveal">◆ Shown before you pay</span></p></div></div>
+    <div class="mathrow"><div class="num">02</div><div><h3>The fee, against that</h3><p>₹25,000, founding batch. Close once in your earn phase and the program has paid for itself <b>multiple times over</b>. Close nothing and you earn nothing: this is a results business, and we say that to your face because everyone who hides it is lying to you.</p></div></div>
+    <div class="mathrow"><div class="num">03</div><div><h3>Why we train you this hard</h3><p>Because we're a brokerage, not a course factory. <b>When you close, we earn too.</b> Your closing is our revenue. We are the only training company you'll meet whose profit depends on you actually succeeding. Sit with that.</p></div></div>
+  </div>
+</section>
+
+<!-- ================= PRICE ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The investment</p>
+    <h2>Founding batch pricing. <em>It will not stay here.</em></h2>
+    <div class="price">
+      <p class="anchor">Batch 3 onwards · <s>₹49,999</s></p>
+      <p class="now">₹25,000</p>
+      <p class="split">Pay upfront: <b>₹25,000</b> · Or split: <b>₹20,000</b> books your seat + <b>₹10,000</b> at field phase (₹30,000 total)</p>
+      <p class="dim" style="margin-top:1rem;margin-inline:0">Founding students bet on us before the results are public, so founding students pay half. The day batch 1's first closings go up on this page, this price is gone. That is not a marketing line. It is a calendar event.</p>
+    </div>
+    <p style="margin-top:1.8rem"><a class="btn" href="#apply"><i class="ri-vip-crown-line"></i> Take a founding seat →</a></p>
+  </div>
+</section>
+
+<!-- ================= TRAINER ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Who's in your corner</p>
+    <h2>The owner. In the room. <em>All 90 days.</em></h2>
+    <div class="trainer-card">
+      <img src="founder.jpeg" alt="Founder" loading="lazy">
+      <div>
+        <p class="t-name">Founder, Estate Hive</p>
+        <p class="t-title">RERA-registered brokerage · Bangalore</p>
+        <p class="t-bio">Founder of <b>Estate Hive</b>, a RERA-registered brokerage and one of Bangalore's fastest-growing real estate companies. Fifteen years building sales businesses. My co-founder and I close premium Bangalore property every single month, and ECEP is how we find the next closers for our own team. <b>We train you like we're going to hire you. Because if you're good, we will.</b></p>
+      </div>
+    </div>
+    <div class="tstats">
+      <div><div class="n" data-count="15" data-suffix=" yrs"><i class="ri-timer-line"></i> 15 yrs</div><div class="l">Building sales businesses</div></div>
+      <div><div class="n" data-count="42" data-prefix="₹" data-suffix="L" id="billT"><i class="ri-money-rupee-circle-line"></i> ₹42L</div><div class="l">Brokerage billing last month</div></div>
+      <div><div class="n n-rera"><i class="ri-shield-check-line"></i> RERA</div><div class="l">PRM/KA/RERA/1251/309/AG/251029/006418</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROOF WALL ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The Batch 1 wall</p>
+    <h2>This wall is empty on purpose. <em>You fill it.</em></h2>
+    <p class="dim">Other programs show you their trophies. We're showing you your slots. Every tile below is a moment that happens to Batch 1 students in the next 90 days, and we will be standing next to you when each one does. <b style="color:var(--txt)">We don't decorate this wall. You do. And we make sure you do.</b></p>
+    <div class="proof-grid">
+      <figure><div class="ph future">Your first buyer call</div><figcaption class="fcap">◆ Day 31 · Your name here</figcaption></figure>
+      <figure><div class="ph future">Your first site visit</div><figcaption class="fcap">◆ Day 34 · Your name here</figcaption></figure>
+      <figure><div class="ph future">Your first "let's do it"</div><figcaption class="fcap">◆ Day 60-something · Your name here</figcaption></figure>
+      <figure><div class="ph future">Your first booking form</div><figcaption class="fcap">◆ Your buyer, your closing</figcaption></figure>
+      <figure><div class="ph future">Your first commission credit</div><figcaption class="fcap">◆ Day 90 · The graduation ceremony</figcaption></figure>
+      <figure><div class="ph future">Your seat</div><figcaption class="fcap">◆ Reserved · Batch 1 · 20 only</figcaption></figure>
+      <figure><div class="ph">Team on the field</div><figcaption>Estate Hive · live project, Bangalore</figcaption></figure>
+      <figure><div class="ph">The rooms we work in</div><figcaption>Sales gallery · Bangalore</figcaption></figure>
+    </div>
+    <p class="dim" style="margin-top:1.8rem">The two real photos are ours. The six empty ones are yours. <b style="color:var(--txt)">Batch 1 results go up here with names and dates as they happen</b>, and the founding students on this wall become the proof every future batch pays double to stand behind.</p>
+    <p style="margin-top:1.6rem"><a class="btn" href="#apply"><i class="ri-layout-grid-line"></i> Claim a tile → Apply</a></p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The questions in your head right now</p>
+    <h2>Answered straight.</h2>
+    <details><summary>Do I need to quit my job?</summary><p>No. Training runs on <b>evenings and weekends</b>. Field phase needs weekend availability plus some weekday flexibility. Most founding students transition gradually, and the program is built exactly for that. You risk your evenings, not your salary.</p></details>
+    <details><summary>Zero real estate experience. Can I do this?</summary><p>The program assumes zero background. What it demands: you can talk to people, take feedback without sulking, and show up when it's hard. <b>Skill we build. Spine you bring.</b></p></details>
+    <details><summary>Where do leads come from?</summary><p>From us. We spend the marketing money; leads are assigned to you in field phase. <b>Your job is closing, not lead generation.</b> Deliberate. Permanent.</p></details>
+    <details><summary>What exactly do I earn per deal?</summary><p>The full structure, slabs and bonuses are shown on your <b>enrollment call, before you pay</b>, and put in writing. We don't publish it on a webpage. We do stand behind it on paper.</p></details>
+    <details><summary>I'm not in Bangalore.</summary><p>Batch 1 is Bangalore-only; the field phase runs on Bangalore inventory. <b>Hyderabad, Chennai, Mumbai, Delhi open in the coming months.</b> Apply and pick your city. Founding access flows to the waitlist first.</p></details>
+    <details><summary>Why only 20 seats?</summary><p>Because every student gets real leads and shadowed site visits, and that doesn't scale like a YouTube video. <b>Twenty is what we can coach properly. The cap is the product.</b></p></details>
+    <details><summary>I'd rather see the webinar first.</summary><p>Fair. The ₹199 masterclass runs Sundays and shows the math. But understand the difference: <b>that room is for deciding. This page is for the decided.</b></p></details>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Enrollment</p>
+    <h2>Three steps. <em>One is a filter.</em></h2>
+    <ol class="steps">
+      <li><div><b>Apply below. Two minutes.</b><p>Name, number, city, what you do now, and one honest line on why you want this. That line matters more than your CV.</p></div></li>
+      <li><div><b>A 15-minute call with our team.</b><p>You see the full commission structure. We see whether you're a closer or a browser. <b>We reject people on this call.</b> A 20-seat batch cannot carry passengers, and the 19 people next to you will thank us for it.</p></div></li>
+      <li><div><b>Book your seat. Batch starts 30 September.</b><p>₹25,000 upfront, or split it: ₹20,000 now + ₹10,000 at field phase (₹30,000 total). Seat confirmed on payment, onboarding on WhatsApp the same day, and day 1 you're in the forge.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= APPLY ================= -->
+<section id="apply">
+  <div class="wrap">
+    <p class="kicker">Batch 1 · Bangalore · starts 30 September</p>
+    <h2>20 seats. And this form is the <em>first test.</em></h2>
+    <div class="count" id="cd2">00:00</div>
+    <form id="appForm" novalidate>
+      <div><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="your@email.com"></div>
+      <div><label for="phone">WhatsApp number</label><input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number"></div>
+      <div><label for="city">City</label>
+        <select id="city" name="city" required>
+          <option value="">Select</option>
+          <option>Bangalore</option><option>Hyderabad</option><option>Chennai</option>
+          <option>Mumbai</option><option>Delhi NCR</option><option>Other</option>
+        </select>
+      </div>
+      <div><label for="role">What do you do currently?</label><input id="role" name="role" type="text" required placeholder="e.g. IT professional, sales executive, business owner"></div>
+      <div><label for="why">One honest line: why you?</label><textarea id="why" name="why" required placeholder="No right answer. Just a real one. We read every single one."></textarea></div>
+      <button class="btn" type="submit" id="submitBtn"><i class="ri-send-plane-line"></i> Submit application →</button>
+      <div class="msg" id="waitMsg"></div>
+      <div class="msg" id="okMsg"></div>
+    </form>
+    <p class="seatline" id="seatLine"></p>
+
+    <p class="ps"><b>P.S.</b> A year from now you'll be one of two people. The one who closed this tab and went back to the countdown. Or the one who filled a two-minute form and found out what their sales ability is actually worth. Same person. Same city. Same ₹42L flowing through it every month. The only variable is what you do in the next two minutes.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <p><b>EstateClosers Executive Program (ECEP)</b> · by Estate Hive, RERA-registered brokerage, Bangalore.</p>
+    <p>RERA: PRM/KA/RERA/1251/309/AG/251029/006418</p>
+    <p>Commissions are paid on completed transactions and depend on the deals you close. Nothing on this page is a guarantee of income.</p>
+    <p>Questions · <a id="waLink" href="#"><i class="ri-whatsapp-line"></i> WhatsApp us</a></p>
+    <p class="endline">◆ Train. Field. Earn. »»</p>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE BAR ===== -->
+<div class="sticky">
+  <small><b>Batch 1 · 20 seats</b><br><span id="cd3">00:00</span></small>
+  <a class="btn" href="#apply"><i class="ri-edit-2-line"></i> Apply now</a>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+  // Dynamic values
+  for (const id of ["billHero","billStat","billT"]) { const el=document.getElementById(id); if(el && !el.dataset.count) el.textContent = BILLED_LAST_MONTH; }
+  document.getElementById('waLink').href = WHATSAPP;
+
+  // Countdown
+  const t = new Date(BATCH_START_ISO).getTime();
+  function tick(){
+    const d = t - Date.now(); let txt = "BATCH LIVE";
+    if (d > 0){
+      const days=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
+      txt = days>0 ? `${days}d ${h}h ${m}m ${String(s).padStart(2,'0')}s` : `${h}h ${m}m ${String(s).padStart(2,'0')}s`;
+    }
+    for (const id of ["cd1","cd2","cd3"]) { const el=document.getElementById(id); if(el) el.textContent = txt; }
+  }
+  tick(); setInterval(tick,1000);
+
+  // Seat counter
+  const left = Math.max(0, SEATS_TOTAL - SEATS_TAKEN);
+  const seatLine = document.getElementById('seatLine');
+  if (seatLine) seatLine.innerHTML = SEATS_TAKEN>0 ? `◆ <b>${left} of ${SEATS_TOTAL}</b> founding seats remain.` : `◆ <b>${SEATS_TOTAL}</b> founding seats. Applications reviewed in order received.`;
+
+  // Count-up animation
+  function countUp(el) {
+    const target = parseInt(el.dataset.count);
+    if (isNaN(target)) return;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const icon = el.querySelector('i');
+    const iconHTML = icon ? icon.outerHTML + ' ' : '';
+    const duration = 1800;
+    const start = performance.now();
+    function frame(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(ease * target);
+      el.innerHTML = iconHTML + prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // IntersectionObserver for stat animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.querySelectorAll('[data-count]').forEach(countUp);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.stats, .tstats').forEach(el => observer.observe(el));
+
+  // Form handler
+  const form = document.getElementById('appForm');
+  const waitMsg = document.getElementById('waitMsg');
+  const okMsg = document.getElementById('okMsg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.replace(/\D/g, '');
+    const city = form.city.value;
+    const role = form.role.value.trim();
+    const why = form.why.value.trim();
+
+    if (!name || !email || phone.length < 10 || !city || !role || !why) {
+      waitMsg.textContent = 'Every field, please. The one-liner matters most.';
+      waitMsg.className = 'msg show err';
+      return;
+    }
+    waitMsg.className = 'msg';
+
+    // Capture to Google Sheets
+    if (CAPTURE_ENDPOINT) {
+      const payload = new URLSearchParams({ name, email, phone, city, role, why, source: location.href, program: 'ECEP-B1' });
+      try { navigator.sendBeacon(CAPTURE_ENDPOINT, payload); } catch(_) {}
+    }
+
+    okMsg.textContent = 'Application in. Our team reaches you on WhatsApp within 24 hours for your 15-minute call. Keep your phone close.';
+    okMsg.className = 'msg show ok';
+    form.querySelector('button').disabled = true;
+  });
+</script>
+</body>
+</html>
