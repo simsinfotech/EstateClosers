@@ -238,6 +238,17 @@
   #register::before{content:"";position:absolute;top:-100px;right:-200px;width:600px;height:400px;background:radial-gradient(closest-side,rgba(46,107,255,.08),transparent 70%);pointer-events:none}
   form{display:grid;gap:.9rem;max-width:440px;margin-top:1.4rem;margin-inline:auto;position:relative;text-align:left}
   form .btn{font-size:.92rem;padding:.75rem 1.3rem;width:auto;justify-self:center}
+  /* OTP verification */
+  .phone-row{display:flex;gap:.6rem;align-items:flex-end}
+  .phone-row input{flex:1}
+  .otp-btn{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;padding:.95rem 1rem;border-radius:var(--radius);border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+  .otp-btn:hover{background:var(--gold);color:#fff}
+  .otp-btn:disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
+  .otp-group{display:none;gap:.6rem;align-items:flex-end}
+  .otp-group.show{display:flex}
+  .otp-group input{flex:1;letter-spacing:.3em;text-align:center;font-family:'JetBrains Mono',monospace;font-size:1.1rem}
+  .verified-tag{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--green);letter-spacing:.04em;margin-top:.3rem}
+  .verified-tag i{margin-right:.3rem}
   label{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#D7E1F2;display:block;margin-bottom:.35rem}
   input,select{width:100%;padding:.95rem 1rem;border-radius:var(--radius);border:1px solid var(--line);background:#0A1120;color:var(--txt);font:inherit;font-size:1rem;transition:border-color .15s}
   select option{color:#000}
@@ -578,7 +589,16 @@
       </div>
       <div>
         <label for="phone">WhatsApp number</label>
-        <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number">
+        <div class="phone-row">
+          <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number">
+          <button type="button" class="otp-btn" id="sendOtp">Send OTP</button>
+        </div>
+        <div class="otp-group" id="otpGroup">
+          <input id="otp" type="text" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit OTP" autocomplete="one-time-code">
+          <button type="button" class="otp-btn" id="verifyOtp">Verify</button>
+        </div>
+        <p class="verified-tag" id="verifiedTag" style="display:none"><i class="ri-checkbox-circle-fill"></i>WhatsApp number verified</p>
+        <div id="recaptcha-container"></div>
       </div>
       <div>
         <label for="city">City</label>
@@ -592,7 +612,7 @@
           <option>Other</option>
         </select>
       </div>
-      <button class="btn btn-pulse" type="submit">Save my seat · ₹199 <span class="arrow">→</span></button>
+      <button class="btn btn-pulse" type="submit" id="submitBtn">Save my seat · ₹199 <span class="arrow">→</span></button>
       <div class="msg" id="waitMsg" role="alert"></div>
     </form>
     <div class="pay-methods">
@@ -758,6 +778,108 @@
     el.style.transition = 'opacity .5s ease, transform .5s ease';
     revealObserver.observe(el);
   });
+</script>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script>
+  // ===== FIREBASE CONFIG — Replace with your Firebase project config =====
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  let phoneVerified = false;
+  let confirmationResult = null;
+
+  const sendOtpBtn = document.getElementById('sendOtp');
+  const verifyOtpBtn = document.getElementById('verifyOtp');
+  const otpGroup = document.getElementById('otpGroup');
+  const phoneInput = document.getElementById('phone');
+  const otpInput = document.getElementById('otp');
+  const verifiedTag = document.getElementById('verifiedTag');
+  const submitBtn = document.getElementById('submitBtn');
+
+  // Invisible reCAPTCHA
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+    size: 'invisible',
+    callback: () => {}
+  });
+
+  // Send OTP
+  sendOtpBtn.addEventListener('click', async () => {
+    const raw = phoneInput.value.replace(/\D/g, '');
+    if (raw.length < 10) {
+      waitMsg.textContent = 'Enter a valid 10-digit phone number first.';
+      waitMsg.className = 'msg show err';
+      return;
+    }
+    const phoneNumber = '+91' + raw.slice(-10);
+    sendOtpBtn.disabled = true;
+    sendOtpBtn.textContent = 'Sending...';
+
+    try {
+      confirmationResult = await auth.signInWithPhoneNumber(phoneNumber, window.recaptchaVerifier);
+      otpGroup.classList.add('show');
+      sendOtpBtn.textContent = 'Resend';
+      sendOtpBtn.disabled = false;
+      otpInput.focus();
+    } catch (err) {
+      waitMsg.textContent = 'Failed to send OTP. Check the number and try again.';
+      waitMsg.className = 'msg show err';
+      sendOtpBtn.textContent = 'Send OTP';
+      sendOtpBtn.disabled = false;
+      window.recaptchaVerifier.render().then(widgetId => {
+        grecaptcha.reset(widgetId);
+      });
+    }
+  });
+
+  // Verify OTP
+  verifyOtpBtn.addEventListener('click', async () => {
+    const code = otpInput.value.trim();
+    if (code.length !== 6) {
+      waitMsg.textContent = 'Enter the 6-digit OTP sent to your phone.';
+      waitMsg.className = 'msg show err';
+      return;
+    }
+    verifyOtpBtn.disabled = true;
+    verifyOtpBtn.textContent = 'Verifying...';
+
+    try {
+      await confirmationResult.confirm(code);
+      phoneVerified = true;
+      otpGroup.classList.remove('show');
+      sendOtpBtn.style.display = 'none';
+      phoneInput.readOnly = true;
+      phoneInput.style.borderColor = 'var(--green)';
+      verifiedTag.style.display = 'block';
+      waitMsg.className = 'msg';
+    } catch (err) {
+      waitMsg.textContent = 'Invalid OTP. Please try again.';
+      waitMsg.className = 'msg show err';
+      verifyOtpBtn.textContent = 'Verify';
+      verifyOtpBtn.disabled = false;
+    }
+  });
+
+  // Override form validation to require phone verification
+  const origSubmit = form.onsubmit;
+  form.addEventListener('submit', (e) => {
+    if (!phoneVerified) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      waitMsg.textContent = 'Please verify your WhatsApp number with OTP first.';
+      waitMsg.className = 'msg show err';
+    }
+  }, true);
 </script>
 </body>
 </html>
