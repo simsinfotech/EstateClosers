@@ -241,6 +241,13 @@
   .msg.ok{border-color:var(--green);color:var(--green)}
   .seatline{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim);margin-top:1.1rem;letter-spacing:.04em;max-width:none}
   .seatline b{color:var(--gold)}
+  /* payment badges */
+  .pay-methods{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.4rem}
+  .pay-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:6px;padding:.4rem .75rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.04em;color:var(--dim);transition:border-color .2s}
+  .pay-badge:hover{border-color:var(--gold-dim)}
+  .pay-badge svg{width:16px;height:16px;flex-shrink:0}
+  .pay-secure{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-top:.8rem;max-width:none}
+  .pay-secure::before{content:"🔒 "}
   .ps{border-left:3px solid var(--gold);padding-left:1.3rem;margin-top:2.4rem;max-width:640px;margin-inline:auto;color:var(--dim);font-style:italic;text-align:left}
   .ps b{color:var(--txt);font-style:normal}
 
@@ -581,6 +588,14 @@
       <button class="btn btn-pulse" type="submit">Save my seat · ₹999 <span class="arrow">→</span></button>
       <div class="msg" id="waitMsg" role="alert"></div>
     </form>
+    <div class="pay-methods">
+      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Cards</span>
+      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> UPI</span>
+      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> Netbanking</span>
+      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><circle cx="18" cy="12" r="2"/></svg> Wallets</span>
+      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg> GPay</span>
+    </div>
+    <p class="pay-secure">Secured by Razorpay · 256-bit SSL encryption</p>
     <p class="seatline" id="seatLine"></p>
     <p class="seatline">Zoom link + reminders on WhatsApp, instantly after payment.</p>
 
@@ -680,17 +695,22 @@
     const btn = form.querySelector('.btn');
     btn.classList.add('loading');
 
+    const payload = { name, email, phone, city, source: location.href, ts: new Date().toISOString() };
+
     if (CAPTURE_ENDPOINT) {
       try {
-        await fetch(CAPTURE_ENDPOINT, {
+        navigator.sendBeacon(CAPTURE_ENDPOINT, JSON.stringify(payload));
+      } catch (_) {
+        fetch(CAPTURE_ENDPOINT, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, phone, city, source: location.href, ts: new Date().toISOString() })
-        });
-      } catch (_) {}
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+      }
     }
 
-    window.location.href = PAYMENT_LINK;
+    setTimeout(() => { window.location.href = PAYMENT_LINK; }, 400);
   });
 
   // Count-up animation
