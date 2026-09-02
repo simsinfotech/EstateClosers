@@ -312,9 +312,9 @@
     <p class="scarce"><span id="seatHero">63 of 100 seats left. When they're gone, they're gone.</span></p>
 
     <div class="stats">
-      <div><div class="n" id="billStat">₹42L</div><div class="l">Billed by our brokerage last month</div></div>
-      <div><div class="n">90</div><div class="l">Days · zero to first commission path</div></div>
-      <div><div class="n">15</div><div class="l">Years building sales businesses</div></div>
+      <div><div class="n" id="billStat" data-count="42" data-prefix="₹" data-suffix="L">₹0L</div><div class="l">Billed by our brokerage last month</div></div>
+      <div><div class="n" data-count="90">0</div><div class="l">Days · zero to first commission path</div></div>
+      <div><div class="n" data-count="15">0</div><div class="l">Years building sales businesses</div></div>
       <div><div class="n">RERA</div><div class="l">Registered brokerage · Karnataka</div></div>
     </div>
   </div>
@@ -692,13 +692,34 @@
     window.location.href = PAYMENT_LINK;
   });
 
-  // Stats cards staggered entrance
+  // Count-up animation
+  function countUp(el) {
+    const target = parseInt(el.dataset.count);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const start = performance.now();
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(ease * target);
+      el.textContent = prefix + current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Stats cards staggered entrance + count-up
   const statsGrid = document.querySelector('.stats');
   if (statsGrid) {
     const statsObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          entry.target.querySelectorAll('[data-count]').forEach((el, i) => {
+            setTimeout(() => countUp(el), i * 150);
+          });
           statsObs.unobserve(entry.target);
         }
       });
