@@ -55,6 +55,8 @@
   .brand img{height:50px;width:auto;filter:brightness(0) invert(1)}
   .brand .nav-cta{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);padding:.55rem 1.1rem;border-radius:var(--radius);text-decoration:none;transition:filter .15s}
   .brand .nav-cta:hover{filter:brightness(1.15)}
+  .brand .callout{animation:none;margin:0}
+  @media(max-width:760px){.brand .callout{display:none}}
 
   /* ribbon */
   .ribbon{position:sticky;top:0;z-index:50;background:rgba(4,7,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:.55rem 1rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase}
@@ -276,6 +278,7 @@
 <!-- ===== NAVBAR ===== -->
 <div class="brand">
   <a href="/"><img src="logo.png" alt="EstateClosers"></a>
+  <p class="callout">Attention: salaried professionals earning ₹5L–₹20L/year</p>
   <a class="nav-cta" href="#apply"><i class="ri-file-edit-line"></i> Apply Now</a>
 </div>
 
