@@ -86,12 +86,21 @@
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* stats grid */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:2.6rem}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.6rem}
   @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stats div{background:var(--panel);padding:1.4rem 1.2rem;transition:background .2s;text-align:center}
-  .stats div:hover{background:var(--panel2)}
-  .stats .n{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--gold);line-height:1}
-  .stats .l{font-size:.9rem;color:var(--dim);margin-top:.45rem;line-height:1.35}
+  .stats div{background:var(--panel);padding:1.6rem 1.2rem;text-align:center;border-radius:var(--radius);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+  .stats div::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(from 0deg,transparent,rgba(61,123,255,.15),transparent 40%);animation:statSpin 6s linear infinite;opacity:0;transition:opacity .3s}
+  .stats div:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 8px 30px rgba(61,123,255,.2)}
+  .stats div:hover::before{opacity:1}
+  .stats .n{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--gold);line-height:1;position:relative}
+  .stats .l{font-size:.9rem;color:var(--dim);margin-top:.45rem;line-height:1.35;position:relative}
+  .stats .n,.stats .l{z-index:1}
+  @keyframes statSpin{to{transform:rotate(360deg)}}
+  @keyframes countUp{from{opacity:0;transform:translateY(16px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .stats.visible div{animation:countUp .6s ease-out both}
+  .stats.visible div:nth-child(2){animation-delay:.12s}
+  .stats.visible div:nth-child(3){animation-delay:.24s}
+  .stats.visible div:nth-child(4){animation-delay:.36s}
 
   /* marquee */
   .marq{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0 1.1rem;background:var(--panel)}
@@ -682,6 +691,20 @@
 
     window.location.href = PAYMENT_LINK;
   });
+
+  // Stats cards staggered entrance
+  const statsGrid = document.querySelector('.stats');
+  if (statsGrid) {
+    const statsObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          statsObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    statsObs.observe(statsGrid);
+  }
 
   // Smooth reveal on scroll
   const revealEls = document.querySelectorAll('.leak, .mathrow, .vscol, .stack .row, .guar');
