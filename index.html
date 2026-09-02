@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EstateClosers · First commission in 90 days. We show the math. · ₹999 live masterclass</title>
+<meta name="description" content="A RERA-registered Bangalore brokerage owner puts the real commission math on screen. 90 minutes. Live. Not recorded. ₹999.">
+<meta name="theme-color" content="#060A14">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="EstateClosers · First commission in 90 days">
+<meta property="og:description" content="A RERA-registered Bangalore brokerage owner puts the real commission math on screen. 90 minutes. Live. ₹999.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,82,500;0,82,800;1,82,800&family=JetBrains+Mono:wght@400;600&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#060A14;--panel:#0C1322;--panel2:#121C33;--line:#1D2A44;
+    --txt:#FFFFFF;--dim:#C4D2E8;--gold:#3D7BFF;--gold-dim:#2A4C9E;
+    --green:#3DD68C;--red:#E5484D;--radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  .bgfix{position:fixed;inset:0;background:#060A14;z-index:-1;pointer-events:none}
+  html{scroll-behavior:smooth;background:#060A14!important}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq-track{animation:none!important}}
+  body{background:#060A14!important;color:var(--txt);font-family:'Public Sans',system-ui,sans-serif;font-size:17.5px;font-weight:500;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--gold);color:#fff}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 82;font-weight:800;line-height:1.02;letter-spacing:-.01em}
+  h1{font-size:clamp(2.5rem,8vw,4.6rem)}
+  h2{font-size:clamp(1.8rem,5.5vw,3rem);margin-bottom:1rem;text-align:center}
+  h1 em,h2 em{font-style:italic;color:var(--gold)}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+  .mono .dot{color:var(--gold)}
+  p{max-width:60ch;margin-inline:auto}
+  .dim{color:var(--dim)}
+  .wrap{width:min(100% - 2.5rem,1060px);margin-inline:auto;text-align:center}
+  section{padding:4.5rem 0;border-top:1px solid var(--line)}
+  @media(max-width:640px){section{padding:3.2rem 0}}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.55rem;background:var(--gold);color:#fff;font-weight:700;font-size:1.05rem;padding:1.05rem 1.6rem;border-radius:var(--radius);text-decoration:none;border:0;cursor:pointer;transition:transform .08s,filter .15s,box-shadow .2s;box-shadow:0 0 0 0 rgba(61,123,255,0)}
+  .btn:hover{filter:brightness(1.12);box-shadow:0 4px 24px rgba(61,123,255,.35)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+  .btn .arrow{transition:transform .15s}
+  .btn:hover .arrow{transform:translateX(3px)}
+  .under{display:flex;flex-wrap:wrap;gap:.5rem 1.3rem;margin-top:.9rem;font-size:.85rem;color:var(--dim)}
+  .under span::before{content:"\2713 ";color:var(--green)}
+  .scarce{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.05em;color:var(--gold);margin-top:1rem;max-width:none}
+  .scarce::before{content:"\25C6 "}
+
+  /* brand header */
+  .brand{display:flex;align-items:center;justify-content:space-between;padding:.7rem 2rem;background:var(--panel);border-bottom:1px solid var(--line);width:100%}
+  .brand img{height:72px;width:auto;filter:brightness(0) invert(1)}
+  .brand .nav-cta{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--gold);padding:.55rem 1.1rem;border-radius:var(--radius);text-decoration:none;transition:filter .15s}
+  .brand .nav-cta:hover{filter:brightness(1.15)}
+
+  /* ribbon */
+  .ribbon{position:sticky;top:0;z-index:50;background:rgba(4,7,15,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:.55rem 1rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase}
+  .ribbon b{color:var(--gold);font-weight:600;font-variant-numeric:tabular-nums}
+
+  /* hero */
+  .hero{border-top:0;padding:4.5rem 0 3.5rem;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(closest-side,rgba(46,107,255,.16),transparent 70%);pointer-events:none}
+  .hero::after{content:"";position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(closest-side,rgba(61,214,140,.06),transparent 70%);pointer-events:none}
+  .hero .wrap{position:relative;text-align:center}
+  .callout{display:inline-block;border:1px solid var(--gold-dim);background:rgba(46,107,255,.07);color:var(--gold);border-radius:999px;padding:.45rem 1.1rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin:0;max-width:none}
+  .brand .callout{animation:none}
+  .hero .callout{margin-bottom:1.3rem;animation:fadeUp .6s ease-out}
+  .statline{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim);margin-bottom:1.8rem;letter-spacing:.04em;max-width:none}
+  .statline b{color:var(--txt);font-weight:600}
+  .hero h1{margin:0 auto 1.4rem;max-width:19ch;font-size:clamp(2.6rem,8.5vw,5.2rem)}
+  .hero .sub{font-size:1.18rem;color:var(--dim);margin:0 auto 2.2rem;max-width:58ch}
+  .hero .sub b{color:var(--txt)}
+  .vsl{position:relative;aspect-ratio:16/9;max-width:760px;margin:0 auto 1rem;border-radius:14px;overflow:hidden;background:#000;border:1px solid var(--gold-dim);box-shadow:0 0 0 1px rgba(46,107,255,.15),0 30px 70px -30px rgba(46,107,255,.35)}
+  .vsl iframe,.vsl video{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vsl-cap{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:2rem;max-width:none}
+  .vsl-cap::before{content:"\25B6 ";color:var(--gold)}
+  .hero .under{justify-content:center}
+  .hero .stats{text-align:center}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+  /* stats grid */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:2.6rem}
+  @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stats div{background:var(--panel);padding:1.4rem 1.2rem;transition:background .2s;text-align:center}
+  .stats div:hover{background:var(--panel2)}
+  .stats .n{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--gold);line-height:1}
+  .stats .l{font-size:.9rem;color:var(--dim);margin-top:.45rem;line-height:1.35}
+
+  /* marquee */
+  .marq{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0 1.1rem;background:var(--panel)}
+  .marq-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:.7rem}
+  .marq-track{display:flex;gap:2.6rem;width:max-content;animation:scroll 28s linear infinite;font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;color:#E4ECF9;white-space:nowrap}
+  .marq-track span:nth-child(even){color:var(--gold-dim);font-weight:400}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-align:center}
+  .kicker::before{content:"\25C6 "}
+
+  /* fascination bullets */
+  .fasc{list-style:none;margin-top:1.8rem;max-width:720px;margin-inline:auto;text-align:left}
+  .fasc li{padding:1.05rem 0 1.05rem 2.3rem;border-bottom:1px solid var(--line);position:relative;font-size:1.06rem;color:var(--dim);transition:color .15s}
+  .fasc li:last-child{border-bottom:0}
+  .fasc li b{color:var(--txt)}
+  .fasc li::before{content:"\2192";position:absolute;left:0;color:var(--gold);font-weight:700}
+  .fasc li:hover{color:var(--txt)}
+
+  /* leak cards */
+  .leak{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:1.7rem 1.6rem;margin-top:1.1rem;transition:border-color .2s;max-width:720px;margin-inline:auto;text-align:left}
+  .leak:hover{border-color:var(--gold-dim)}
+  .leak .tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim);letter-spacing:.06em}
+  .leak h3{font-size:1.35rem;margin:.5rem 0 .55rem}
+  .leak p{color:var(--dim);margin-inline:0}
+  .leak .fix{margin-top:.9rem;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.04em}
+  .leak .fix::before{content:"Fix \00B7 "}
+
+  /* math rows */
+  .mathrow{display:grid;grid-template-columns:64px 1fr;gap:1.4rem;padding:1.6rem 0;border-bottom:1px solid var(--line);max-width:720px;margin-inline:auto;text-align:left}
+  .mathrow:last-of-type{border-bottom:0}
+  .mathrow .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.6rem;color:var(--gold-dim)}
+  .mathrow h3{font-size:1.3rem;margin-bottom:.45rem}
+  .mathrow p{color:var(--dim);margin-inline:0}
+  .mathrow b{color:var(--txt)}
+  .blur{filter:blur(7px);user-select:none;pointer-events:none;color:var(--gold)}
+  .reveal{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--gold);letter-spacing:.05em}
+
+  /* vs comparison */
+  .vs{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+  @media(max-width:760px){.vs{grid-template-columns:1fr}}
+  .vscol{border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem 1.6rem;background:var(--panel);text-align:left}
+  .vscol.win{border-color:var(--gold-dim);background:linear-gradient(180deg,#0C1734,var(--panel) 40%)}
+  .vscol h3{font-size:1.2rem;margin-bottom:1rem}
+  .vscol ul{list-style:none}
+  .vscol li{padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.97rem;color:var(--dim)}
+  .vscol li:last-child{border-bottom:0}
+  .vscol li b{color:var(--txt)}
+  .vscol .x::before{content:"\2717 ";color:var(--red)}
+  .vscol .y::before{content:"\2713 ";color:var(--green)}
+
+  /* agenda */
+  .agenda{list-style:none;margin-top:1.6rem;max-width:680px;margin-inline:auto;text-align:left}
+  .agenda li{display:grid;grid-template-columns:80px 1fr;gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+  .agenda li:last-child{border-bottom:0}
+  .agenda time{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--gold)}
+  .agenda span{color:var(--dim)}
+  .agenda b{color:var(--txt)}
+
+  /* value stack */
+  .stack{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:1.8rem;max-width:720px;margin-inline:auto;text-align:left}
+  .stack .row{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:1.05rem 1.4rem;background:var(--panel);border-bottom:1px solid var(--line)}
+  .stack .row p{color:var(--dim);font-size:.9rem;margin-top:.2rem;margin-inline:0}
+  .stack .row b{font-size:1.02rem}
+  .stack .val{font-family:'JetBrains Mono',monospace;color:var(--dim);white-space:nowrap;font-size:.9rem}
+  .stack .total{background:linear-gradient(180deg,#0C1734,var(--panel));border-bottom:0}
+  .stack .total b{color:var(--gold);font-size:1.15rem}
+  .stack .total .val{color:var(--txt);font-weight:600;font-size:1.05rem}
+  .strike{text-decoration:line-through;opacity:.6;margin-right:.5rem}
+
+  /* guarantee */
+  .guar{border:1px solid var(--gold-dim);border-radius:var(--radius);background:linear-gradient(180deg,#0C1734,var(--panel) 55%);padding:2.2rem 2rem;margin-top:2rem;max-width:760px;margin-inline:auto;text-align:center}
+  .guar h3{font-size:clamp(1.4rem,4vw,1.9rem);margin-bottom:.8rem}
+  .guar h3 em{font-style:italic;color:var(--gold)}
+  .guar p{color:var(--dim);text-align:left;margin-inline:auto}
+  .guar b{color:var(--txt)}
+  .guar .seal{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+  .guar .seal::before{content:"\25C6 "}
+
+  /* trainer */
+  .trainer-card{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center;margin-top:2rem;max-width:760px;margin-inline:auto;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:2rem;text-align:left}
+  @media(max-width:680px){.trainer-card{grid-template-columns:1fr;text-align:center}}
+  .photo{width:200px;height:250px;border-radius:var(--radius);overflow:hidden;background:var(--panel2);flex-shrink:0}
+  @media(max-width:680px){.photo{width:180px;height:225px;margin-inline:auto}}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .trainer-info h3{font-size:1.6rem;margin-bottom:.2rem}
+  .trainer-info .role{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+  .trainer-info p.dim{margin-inline:0;font-size:.95rem;line-height:1.65}
+  @media(max-width:680px){.trainer-info p.dim{margin-inline:auto}}
+  .tstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;max-width:760px;margin-inline:auto}
+  @media(max-width:560px){.tstats{grid-template-columns:1fr}}
+  .tstats .tcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.2rem;text-align:center}
+  .tstats .ticon{font-size:1.4rem;margin-bottom:.6rem;color:var(--gold)}
+  .tstats .n{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.5rem;color:var(--gold);line-height:1}
+  .tstats .l{font-size:.82rem;color:var(--dim);margin-top:.4rem;line-height:1.35}
+
+  /* proof wall */
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.8rem}
+  @media(max-width:760px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+  .proof-grid figure{margin:0;display:flex;flex-direction:column}
+  .proof-grid .ph{width:100%;aspect-ratio:1/1;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:.82rem;text-align:center;padding:.8rem;overflow:hidden;transition:border-color .2s}
+  .proof-grid .ph:hover{border-color:var(--gold-dim)}
+  .proof-grid .ph img{width:100%;height:100%;object-fit:cover}
+  .proof-grid figcaption{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim);margin-top:.5rem;letter-spacing:.04em;text-align:center}
+
+  /* FAQ */
+  details{border-bottom:1px solid var(--line);max-width:720px;margin-inline:auto;text-align:left}
+  summary{cursor:pointer;list-style:none;padding:1.15rem 0;font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;gap:1rem;transition:color .15s}
+  summary:hover{color:var(--gold)}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:'Archivo',sans-serif;color:var(--gold);font-size:1.4rem;line-height:1;font-weight:800;transition:transform .2s}
+  details[open] summary::after{content:"\2013";transform:rotate(180deg)}
+  details p{color:var(--dim);padding-bottom:1.2rem;margin-inline:0}
+  details b{color:var(--txt)}
+
+  /* steps */
+  .steps{list-style:none;counter-reset:s;margin-top:1.8rem;max-width:640px;margin-inline:auto;text-align:left}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:1.2rem;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{content:counter(s,decimal-leading-zero);font-family:'Archivo',sans-serif;font-weight:800;font-size:1.5rem;color:var(--gold)}
+  .steps b{display:block;margin-bottom:.2rem}
+  .steps p{color:var(--dim);font-size:.97rem;margin-inline:0}
+
+  /* register */
+  #register{background:var(--panel);position:relative;overflow:hidden}
+  #register::before{content:"";position:absolute;top:-100px;right:-200px;width:600px;height:400px;background:radial-gradient(closest-side,rgba(46,107,255,.08),transparent 70%);pointer-events:none}
+  form{display:grid;gap:.9rem;max-width:440px;margin-top:1.4rem;margin-inline:auto;position:relative;text-align:left}
+  form .btn{font-size:.92rem;padding:.75rem 1.3rem;width:auto;justify-self:center}
+  label{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#D7E1F2;display:block;margin-bottom:.35rem}
+  input,select{width:100%;padding:.95rem 1rem;border-radius:var(--radius);border:1px solid var(--line);background:#0A1120;color:var(--txt);font:inherit;font-size:1rem;transition:border-color .15s}
+  select option{color:#000}
+  input:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+  input::placeholder{color:var(--dim);opacity:.5}
+  .msg{display:none;border-radius:var(--radius);padding:1rem 1.1rem;font-size:.95rem;margin-top:.3rem;border:1px solid var(--line);background:var(--panel2)}
+  .msg.show{display:block}
+  .msg.err{border-color:var(--red);color:var(--red)}
+  .msg.ok{border-color:var(--green);color:var(--green)}
+  .seatline{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim);margin-top:1.1rem;letter-spacing:.04em;max-width:none}
+  .seatline b{color:var(--gold)}
+  .ps{border-left:3px solid var(--gold);padding-left:1.3rem;margin-top:2.4rem;max-width:640px;margin-inline:auto;color:var(--dim);font-style:italic;text-align:left}
+  .ps b{color:var(--txt);font-style:normal}
+
+  /* sticky mobile bar */
+  .sticky{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(4,7,15,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:.7rem 1rem;display:none;justify-content:space-between;align-items:center;gap:.8rem}
+  .sticky small{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim);line-height:1.4;font-variant-numeric:tabular-nums}
+  .sticky small b{color:var(--gold)}
+  .sticky .btn{padding:.7rem 1.1rem;font-size:.92rem;white-space:nowrap}
+  @media(max-width:640px){.sticky{display:flex}body{padding-bottom:4.4rem}}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:2.4rem 0 3.2rem;font-size:.85rem;color:var(--dim);text-align:center}
+  footer p{max-width:none;margin-bottom:.6rem;margin-inline:auto}
+  footer a{color:var(--dim);transition:color .15s}
+  footer a:hover{color:var(--gold)}
+  .endline{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-top:1.4rem}
+
+  /* pulse animation for CTA */
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(61,123,255,.4)}50%{box-shadow:0 0 0 10px rgba(61,123,255,0)}}
+  .btn-pulse{animation:pulse 2.5s ease-in-out infinite}
+
+  /* loading spinner for form */
+  .btn.loading{pointer-events:none;opacity:.7}
+  .btn.loading::after{content:"";width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin-left:.5rem}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="bgfix" aria-hidden="true"></div>
+
+<!-- ===== CONFIG ===== -->
+<script>
+  const EVENT_ISO   = "2026-09-20T11:00:00+05:30";
+  const SEATS_TOTAL = 100;
+  const SEATS_TAKEN = 37;
+  const PAYMENT_LINK   = "https://rzp.io/l/estateclosers-webinar";
+  const CAPTURE_ENDPOINT = "";
+  const BILLED_LAST_MONTH = "₹42L";
+</script>
+
+<!-- ===== RIBBON ===== -->
+<div class="ribbon" role="banner">
+  <span>◆ Live Sunday 20 Sept · 11:00 IST</span>
+  <span>Doors close in <b id="cd1">--:--</b></span>
+  <span><b id="rSeats">63</b> seats · ₹999</span>
+</div>
+
+<!-- ===== BRAND ===== -->
+<nav class="brand">
+  <img src="logo.png" alt="EstateClosers">
+  <p class="callout">Attention: salaried professionals, career switchers &amp; stuck agents</p>
+  <a href="#register" class="nav-cta">Register Now →</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <p class="statline"><b id="billHero">₹42L</b> billed by our brokerage last month · <b>RERA-registered</b> · <b>15 yrs</b> in sales businesses</p>
+    <h1>Somebody earned a share of <em>every one</em> of those deals. <em>You could be next.</em></h1>
+    <p class="sub">I own Estate Hive, one of Bangalore's fastest-growing real estate companies. On Sunday I put the <b>actual commission math on screen</b>: what one closing pays a trained closer, how many deals a year make a crore, and the 90-day path from zero to your first cheque. <b>Live. ₹999. No recording. No replay.</b></p>
+
+    <!-- VSL video -->
+    <div class="vsl">
+      <iframe src="about:blank" data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1" title="Watch first: 90 seconds" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="vsl-cap">Watch this first · 90 seconds</p>
+
+    <a class="btn btn-pulse" href="#register">Save my seat · ₹999 <span class="arrow">→</span></a>
+    <div class="under"><span>90 minutes</span><span>Live on Zoom</span><span>Every question answered</span></div>
+    <p class="scarce"><span id="seatHero">63 of 100 seats left. When they're gone, they're gone.</span></p>
+
+    <div class="stats">
+      <div><div class="n" id="billStat">₹42L</div><div class="l">Billed by our brokerage last month</div></div>
+      <div><div class="n">90</div><div class="l">Days · zero to first commission path</div></div>
+      <div><div class="n">15</div><div class="l">Years building sales businesses</div></div>
+      <div><div class="n">RERA</div><div class="l">Registered brokerage · Karnataka</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marq">
+  <p class="marq-label" aria-hidden="true">◆ Developers whose projects we transact</p>
+  <div class="marq-track" aria-hidden="true">
+    <span>PRESTIGE</span><span>·</span><span>SOBHA</span><span>·</span><span>GODREJ</span><span>·</span><span>LODHA</span><span>·</span><span>ASSETZ</span><span>·</span><span>SATTVA</span><span>·</span><span>TATA</span><span>·</span><span>BIRLA</span><span>·</span><span>PURAVANKARA</span><span>·</span>
+    <span>PRESTIGE</span><span>·</span><span>SOBHA</span><span>·</span><span>GODREJ</span><span>·</span><span>LODHA</span><span>·</span><span>ASSETZ</span><span>·</span><span>SATTVA</span><span>·</span><span>TATA</span><span>·</span><span>BIRLA</span><span>·</span><span>PURAVANKARA</span><span>·</span>
+  </div>
+</div>
+
+<!-- ===== FASCINATION BULLETS ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Inside the 90 minutes</p>
+    <h2>Six things you'll know by Sunday lunch that <em>99% of agents never learn.</em></h2>
+    <ul class="fasc">
+      <li>The <b>real rupee figure</b> a trained closer takes home from one Bangalore closing (it's not what job portals told you)</li>
+      <li>The surprisingly small <b>number of deals per year</b> that adds up to a crore, shown as plain arithmetic on screen</li>
+      <li>Why the agents who fail were <b>doomed before their first call</b>, and the one thing the successful minority did differently</li>
+      <li>The <b>90-day sequence</b> my own team follows from day one to first cheque: train, field, earn, week by week</li>
+      <li>How to start <b>without quitting your job</b>, and the exact milestone where switching becomes safe instead of scary</li>
+      <li>The question every buyer silently asks in a sales gallery, and <b>the answer that closes them</b></li>
+    </ul>
+    <p style="margin-top:1.8rem"><a class="btn" href="#register">I want all six · ₹999 <span class="arrow">→</span></a></p>
+  </div>
+</section>
+
+<!-- ===== DIAGNOSIS ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The diagnosis</p>
+    <h2>You're good with people. So why is your income <em>stuck?</em></h2>
+    <p class="dim">It's not talent. It's not luck. It's that nobody ever showed you where the money actually moves, or trained you to stand in front of it.</p>
+
+    <div class="leak">
+      <span class="tag">/ Leak 01</span>
+      <h3>Your salary has a ceiling. Your effort doesn't.</h3>
+      <p>You can work twice as hard this year and your CTC moves 8%. The appraisal system pays for time served, not deals closed. You already know this. You feel it every April.</p>
+      <p class="fix">Commission income · paid on results, uncapped by design</p>
+    </div>
+    <div class="leak">
+      <span class="tag">/ Leak 02</span>
+      <h3>The industry hiring you is shrinking. This one can't be automated.</h3>
+      <p>Layoffs, benches, AI eating roles. Meanwhile no algorithm walks a family through a site visit and closes a ₹1.5 Cr decision. Property closing is one of the last high-income skills a machine can't do.</p>
+      <p class="fix">A skill with no bench and no obsolescence date</p>
+    </div>
+    <div class="leak">
+      <span class="tag">/ Leak 03</span>
+      <h3>Everyone who tried real estate before you was thrown in untrained.</h3>
+      <p>Handed a visiting card, told "go sell." No script, no system, no path. That's why most quit in 6 months, and why the trained minority quietly takes the commissions everyone else leaves on the table.</p>
+      <p class="fix">The 90-day training path · shown in full on Sunday</p>
+    </div>
+
+    <p style="margin-top:1.8rem"><a class="btn" href="#register">Show me the path · ₹999 <span class="arrow">→</span></a></p>
+  </div>
+</section>
+
+<!-- ===== THE MATH ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The work, in plain English</p>
+    <h2>No motivation seminar. <em>Just the math</em> you've never been shown.</h2>
+    <p class="dim">Five numbers go on screen Sunday. Blurred here on purpose. Anyone can type a big claim on a webpage. I'd rather show you live, where you can question every figure.</p>
+
+    <div class="mathrow"><div class="num">01</div><div><h3>What our brokerage billed last month</h3><p>The full figure, on screen, so you see the pool the money comes from is <b>real and current</b>, not a 2019 screenshot. <span class="reveal">◆ Revealed live</span></p></div></div>
+    <div class="mathrow"><div class="num">02</div><div><h3>What one closing pays a trained closer</h3><p>Your share of a single deal: <span class="blur">₹92,000</span>. How it's calculated, when it's paid, what the developer bonus adds. <span class="reveal">◆ Revealed live</span></p></div></div>
+    <div class="mathrow"><div class="num">03</div><div><h3>Deals per year to a crore</h3><p>It's <span class="blur">14 deals</span>, a smaller number than you think, and I'll show the arithmetic per month, per week. Not a dream. A quota.</p></div></div>
+    <div class="mathrow"><div class="num">04</div><div><h3>The 90-day path, week by week</h3><p><b>Days 1 to 30 train. Days 31 to 60 field, on live inventory. Days 61 to 90 earn.</b> The same sequence my own team runs. You'll see every milestone.</p></div></div>
+    <div class="mathrow"><div class="num">05</div><div><h3>How to start without quitting your job</h3><p>The transition plan for people with an EMI and no room for a gamble: evenings, weekends, and the exact point where the switch becomes safe.</p></div></div>
+  </div>
+</section>
+
+<!-- ===== VS COMPARISON ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Why this isn't free</p>
+    <h2>Free webinars are <em>pitches in a costume.</em> This is the opposite.</h2>
+    <div class="vs">
+      <div class="vscol">
+        <h3>✗ The free-webinar racket</h3>
+        <ul>
+          <li class="x"><b>500 people</b>, cameras off, nobody listening</li>
+          <li class="x">40 minutes of story, <b>5 minutes of content</b></li>
+          <li class="x">Fake scarcity, fake countdown, evergreen "live"</li>
+          <li class="x">The real numbers never shown, only lifestyle photos</li>
+          <li class="x">Ends in a <b>₹2L course pitch</b> that was the point all along</li>
+        </ul>
+      </div>
+      <div class="vscol win">
+        <h3>✓ This room</h3>
+        <ul>
+          <li class="y"><b>100 seats</b>, live, every question answered</li>
+          <li class="y"><b>80 of 90 minutes</b> = math, roadmap, Q&amp;A</li>
+          <li class="y">One real date. <b>No recording, no replay, ever</b></li>
+          <li class="y">Actual brokerage figures on screen, from a <b>RERA-registered</b> business</li>
+          <li class="y">10-minute program mention, <b>clearly marked, optional</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="dim" style="margin-top:1.6rem">₹999 keeps the room serious. If ₹999 is too much to evaluate a career, the career isn't the problem.</p>
+  </div>
+</section>
+
+<!-- ===== AGENDA ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">The 90 minutes</p>
+    <h2>Timestamped. So you know <em>exactly</em> what you're buying.</h2>
+    <ul class="agenda">
+      <li><time>00:00</time><span><b>Why I built a brokerage</b>, and what I watched talented people get wrong</span></li>
+      <li><time>00:15</time><span><b>The crore math, on screen</b>: billing figure, deal pay-out, deals per year</span></li>
+      <li><time>00:35</time><span><b>The 90-day roadmap</b>: train, field, earn, week by week</span></li>
+      <li><time>00:55</time><span><b>The 3 skills</b> that decide who makes it, with examples from this month's deals</span></li>
+      <li><time>01:10</time><span><b>The full program</b>, for those who want it · optional 10 minutes</span></li>
+      <li><time>01:20</time><span><b>Open Q&amp;A</b>, including the uncomfortable questions</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== VALUE STACK ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">What ₹999 actually buys</p>
+    <h2>Here's everything you get for <em>less than one dinner out.</em></h2>
+    <div class="stack">
+      <div class="row"><div><b>The 90-minute live masterclass</b><p>The commission math, the 90-day roadmap, the 3 skills. Taught by the brokerage owner, live.</p></div><span class="val">Core</span></div>
+      <div class="row"><div><b>Open Q&amp;A, every question answered</b><p>Ask about commissions, RERA, part-time starts, anything. No question dodged.</p></div><span class="val">Included</span></div>
+      <div class="row"><div><b>The 90-Day Roadmap one-pager</b><p>The week-by-week milestone sheet from the session, sent to attendees on WhatsApp after we close.</p></div><span class="val">Bonus 01</span></div>
+      <div class="row"><div><b>Priority access to Batch 1 seats</b><p>The full program takes limited seats per batch. Attendees hear first, before any public announcement.</p></div><span class="val">Bonus 02</span></div>
+      <div class="row total"><div><b>Your price</b></div><span class="val">₹999</span></div>
+    </div>
+    <p style="margin-top:1.8rem"><a class="btn" href="#register">Take the seat · ₹999 <span class="arrow">→</span></a></p>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section>
+  <div class="wrap">
+    <div class="guar">
+      <p class="seal">The "Waste My Time" Guarantee</p>
+      <h3>Sit through all 90 minutes. If you got <em>nothing</em>, I pay you back.</h3>
+      <p>Attend the full session. If you walk away feeling it wasn't worth ₹999, message us on WhatsApp <b>the same day</b> and we refund the full amount. No form, no argument, no "processing time." <b>I can afford this offer because almost nobody asks.</b> The risk of Sunday is on me, not you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRAINER ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Who's running it</p>
+    <h2>The owner. Not a coach who <em>quit selling.</em></h2>
+
+    <div class="trainer-card">
+      <div class="photo">
+        <img src="founder.jpeg" alt="Shamique — Founder, Estate Hive" loading="lazy">
+      </div>
+      <div class="trainer-info">
+        <h3>Shamique</h3>
+        <p class="role">Founder · Estate Hive</p>
+        <p class="dim">RERA-registered brokerage and one of Bangalore's fastest-growing real estate companies. Fifteen years as an entrepreneur in sales businesses. My co-founder and I close premium Bangalore property every month, and the best people I train, <b style="color:var(--txt)">I hire into my own team.</b></p>
+      </div>
+    </div>
+
+    <div class="tstats">
+      <div class="tcard">
+        <div class="ticon">&#9201;</div>
+        <div class="n">15 yrs</div>
+        <div class="l">Building sales businesses</div>
+      </div>
+      <div class="tcard">
+        <div class="ticon">&#8377;</div>
+        <div class="n" id="billT">₹42L</div>
+        <div class="l">Brokerage billing last month</div>
+      </div>
+      <div class="tcard">
+        <div class="ticon">&#9745;</div>
+        <div class="n">RERA</div>
+        <div class="l">Registered brokerage · Karnataka</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROOF WALL ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Wall of proof</p>
+    <h2>Receipts, not promises.</h2>
+    <p class="dim">Awards from the developers we transact with, and moments from the field.</p>
+    <div class="proof-grid">
+      <figure><div class="ph">Award photo 1</div><figcaption>Developer · Award · 2025</figcaption></figure>
+      <figure><div class="ph">Award photo 2</div><figcaption>Developer · Award · 2025</figcaption></figure>
+      <figure><div class="ph">Award photo 3</div><figcaption>Developer · Award · 2024</figcaption></figure>
+      <figure><div class="ph">Award photo 4</div><figcaption>Developer · Award · 2024</figcaption></figure>
+      <figure><div class="ph">Site visit photo</div><figcaption>On the field · Bangalore</figcaption></figure>
+      <figure><div class="ph">Team closing moment</div><figcaption>Estate Hive team</figcaption></figure>
+      <figure><div class="ph">Booking desk photo</div><figcaption>Live project · Bangalore</figcaption></figure>
+      <figure><div class="ph">Felicitation event</div><figcaption>Developer event</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Before you pay</p>
+    <h2>FAQ.</h2>
+    <details><summary>Is this just a pitch for a bigger course?</summary><p><b>10 of the 90 minutes</b> cover the full program, clearly marked, optional. The other 80 are the math, the roadmap, and open Q&amp;A. Most attendees get everything they came for at ₹999 and that's fine by me.</p></details>
+    <details><summary>Zero real estate experience. Worth it?</summary><p>You're exactly who it's built for. <b>Everything is explained from zero.</b> The people who do best in this business mostly came from outside it.</p></details>
+    <details><summary>I'm already an agent.</summary><p>The commission-flow breakdown and the 3-skills section are where working agents take the most notes. You'll also see how a brokerage decides <b>who it hires from the people it trains.</b></p></details>
+    <details><summary>I'm not in Bangalore.</summary><p>Attend from anywhere. It's on Zoom. The full program's field phase runs on Bangalore inventory today; <b>Hyderabad, Chennai, Mumbai and Delhi open over the coming months.</b></p></details>
+    <details><summary>Recording?</summary><p><b>No. Ever.</b> The numbers go on screen live and stay there. If that annoys you, you understand exactly why we do it.</p></details>
+    <details><summary>What if it's a waste of my time?</summary><p>Then it's free. Sit the full 90 minutes, message us the same day, <b>full ₹999 back.</b> See the guarantee above.</p></details>
+  </div>
+</section>
+
+<!-- ===== WHAT HAPPENS NEXT ===== -->
+<section>
+  <div class="wrap">
+    <p class="kicker">After you pay</p>
+    <h2>What happens in the next <em>2 minutes.</em></h2>
+    <ol class="steps">
+      <li><div><b>You pay ₹999 and land on the confirmation page.</b><p>Razorpay, UPI, cards, netbanking. Takes about 40 seconds.</p></div></li>
+      <li><div><b>Your Zoom link arrives on WhatsApp instantly.</b><p>Plus calendar invite and reminders at 24 hours, 1 hour, and 10 minutes before we go live.</p></div></li>
+      <li><div><b>Sunday 11:00 AM, you're in the room.</b><p>Notebook ready. Cameras optional. Questions encouraged. 90 minutes later you know the math.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== REGISTER ===== -->
+<section id="register">
+  <div class="wrap">
+    <h2>Look. We could keep typing. Or you could just <em>take the seat.</em></h2>
+    <form id="regForm" novalidate>
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your full name">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="your@email.com">
+      </div>
+      <div>
+        <label for="phone">WhatsApp number</label>
+        <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="10-digit mobile number">
+      </div>
+      <div>
+        <label for="city">City</label>
+        <select id="city" name="city" required>
+          <option value="">Select your city</option>
+          <option>Bangalore</option>
+          <option>Hyderabad</option>
+          <option>Chennai</option>
+          <option>Mumbai</option>
+          <option>Delhi NCR</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button class="btn btn-pulse" type="submit">Save my seat · ₹999 <span class="arrow">→</span></button>
+      <div class="msg" id="waitMsg" role="alert"></div>
+    </form>
+    <p class="seatline" id="seatLine"></p>
+    <p class="seatline">Zoom link + reminders on WhatsApp, instantly after payment.</p>
+
+    <p class="ps"><b>P.S.</b> The webinar happens once, live, and is never recorded. The numbers go on screen for the people in the room. If you're reading this a second time, you already know you're coming. The only question is whether a seat is still open when you decide.</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <p><b>EstateClosers</b> · a training program by Estate Hive, RERA-registered brokerage, Bangalore.</p>
+    <p>Commissions are paid on completed transactions and depend on the deals you close. Nothing on this page is a guarantee of income.</p>
+    <p>Questions · <a href="https://wa.me/919876543210">WhatsApp us</a></p>
+    <p class="endline">◆ Built on receipts. Shown live. Never recorded. »»</p>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE BAR ===== -->
+<div class="sticky" role="complementary">
+  <small><b>Sun 20 Sept · ₹999</b><br><span id="cd3">--:--</span></small>
+  <a class="btn" href="#register">Save my seat</a>
+</div>
+
+<script>
+  // Fill billing figures
+  for (const id of ["billHero","billStat","billT"]) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = BILLED_LAST_MONTH;
+  }
+
+  // Countdown timer
+  const targetTime = new Date(EVENT_ISO).getTime();
+  function tick() {
+    const diff = targetTime - Date.now();
+    let txt = "LIVE NOW";
+    if (diff > 0) {
+      const days = Math.floor(diff / 864e5);
+      const h = Math.floor((diff % 864e5) / 36e5);
+      const m = Math.floor((diff % 36e5) / 6e4);
+      const s = Math.floor((diff % 6e4) / 1e3);
+      txt = days > 0
+        ? `${days}d ${h}h ${m}m ${String(s).padStart(2,'0')}s`
+        : `${h}h ${m}m ${String(s).padStart(2,'0')}s`;
+    }
+    for (const id of ["cd1","cd3"]) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = txt;
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Seat counter
+  const seatsLeft = Math.max(0, SEATS_TOTAL - SEATS_TAKEN);
+  document.getElementById('rSeats').textContent = SEATS_TAKEN > 0
+    ? `${seatsLeft}/${SEATS_TOTAL}`
+    : SEATS_TOTAL;
+  document.getElementById('seatHero').textContent = SEATS_TAKEN > 0
+    ? `${seatsLeft} of ${SEATS_TOTAL} seats left. When they're gone, they're gone.`
+    : `${SEATS_TOTAL} seats. When they're gone, they're gone.`;
+  document.getElementById('seatLine').innerHTML = SEATS_TAKEN > 0
+    ? `◆ <b>${seatsLeft} of ${SEATS_TOTAL}</b> seats left for Sunday.`
+    : `◆ Capped at <b>${SEATS_TOTAL}</b> so every question gets answered.`;
+
+  // Lazy load video iframe when it scrolls into view
+  const vslIframe = document.querySelector('.vsl iframe[data-src]');
+  if (vslIframe) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          vslIframe.src = vslIframe.dataset.src;
+          observer.unobserve(vslIframe);
+        }
+      });
+    }, { rootMargin: '200px' });
+    observer.observe(vslIframe);
+  }
+
+  // Form handling
+  const form = document.getElementById('regForm');
+  const waitMsg = document.getElementById('waitMsg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.phone.value.replace(/\D/g, '');
+    const city = form.city.value;
+
+    waitMsg.className = 'msg';
+
+    if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || phone.length < 10 || !city) {
+      waitMsg.textContent = 'Name, valid email, 10-digit WhatsApp number, and city. Then you\'re in.';
+      waitMsg.className = 'msg show err';
+      return;
+    }
+
+    const btn = form.querySelector('.btn');
+    btn.classList.add('loading');
+
+    if (CAPTURE_ENDPOINT) {
+      try {
+        await fetch(CAPTURE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, city, source: location.href, ts: new Date().toISOString() })
+        });
+      } catch (_) {}
+    }
+
+    window.location.href = PAYMENT_LINK;
+  });
+
+  // Smooth reveal on scroll
+  const revealEls = document.querySelectorAll('.leak, .mathrow, .vscol, .stack .row, .guar');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    revealObserver.observe(el);
+  });
+</script>
+</body>
+</html>
