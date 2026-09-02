@@ -101,8 +101,9 @@
   /* marquee */
   .marq{overflow:hidden;border-block:1px solid var(--line);padding:1rem 0 1.1rem;background:var(--panel)}
   .marq-label{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:.7rem}
-  .marq-track{display:flex;gap:2.6rem;width:max-content;animation:scroll 28s linear infinite;font-family:'Archivo',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;color:#E4ECF9;white-space:nowrap}
-  .marq-track span:nth-child(even){color:var(--gold-dim);font-weight:400}
+  .marq-track{display:flex;width:max-content;animation:scroll 30s linear infinite;align-items:center;gap:0}
+  .marq-track img{height:50px;width:auto;filter:brightness(0) invert(1);opacity:.7;flex-shrink:0}
+  @media(max-width:640px){.marq-track img{height:35px}}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
   .kicker{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-align:center}
@@ -318,8 +319,8 @@
 <div class="marq">
   <p class="marq-label" aria-hidden="true">◆ Developers whose projects we transact</p>
   <div class="marq-track" aria-hidden="true">
-    <span>PRESTIGE</span><span>·</span><span>SOBHA</span><span>·</span><span>GODREJ</span><span>·</span><span>LODHA</span><span>·</span><span>ASSETZ</span><span>·</span><span>SATTVA</span><span>·</span><span>TATA</span><span>·</span><span>BIRLA</span><span>·</span><span>PURAVANKARA</span><span>·</span>
-    <span>PRESTIGE</span><span>·</span><span>SOBHA</span><span>·</span><span>GODREJ</span><span>·</span><span>LODHA</span><span>·</span><span>ASSETZ</span><span>·</span><span>SATTVA</span><span>·</span><span>TATA</span><span>·</span><span>BIRLA</span><span>·</span><span>PURAVANKARA</span><span>·</span>
+    <img src="developers.jpg" alt="DLF · Godrej · Lodha · Prestige · Sobha · Brigade · Puravankara · Phoenix · Shapoorji Pallonji · Ireo · Mahindra Lifespaces">
+    <img src="developers.jpg" alt="" aria-hidden="true">
   </div>
 </div>
 
