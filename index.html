@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,82,500;0,82,800;1,82,800&family=JetBrains+Mono:wght@400;600&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 <style>
   :root{
     --bg:#060A14;--panel:#0C1322;--panel2:#121C33;--line:#1D2A44;
@@ -252,7 +253,7 @@
   .pay-methods{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.4rem}
   .pay-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:6px;padding:.4rem .75rem;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.04em;color:var(--dim);transition:border-color .2s}
   .pay-badge:hover{border-color:var(--gold-dim)}
-  .pay-badge svg{width:16px;height:16px;flex-shrink:0}
+  .pay-badge i{font-size:1rem}
   .pay-secure{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-top:.8rem;max-width:none}
   .pay-secure::before{content:"🔒 "}
   .ps{border-left:3px solid var(--gold);padding-left:1.3rem;margin-top:2.4rem;max-width:640px;margin-inline:auto;color:var(--dim);font-style:italic;text-align:left}
@@ -499,17 +500,17 @@
 
     <div class="tstats">
       <div class="tcard">
-        <div class="ticon">&#9201;</div>
+        <div class="ticon"><i class="ri-time-line"></i></div>
         <div class="n" data-count="15" data-suffix=" yrs">0 yrs</div>
         <div class="l">Building sales businesses</div>
       </div>
       <div class="tcard">
-        <div class="ticon">&#8377;</div>
+        <div class="ticon"><i class="ri-money-rupee-circle-line"></i></div>
         <div class="n" id="billT" data-count="42" data-prefix="₹" data-suffix="L">₹0L</div>
         <div class="l">Brokerage billing last month</div>
       </div>
       <div class="tcard">
-        <div class="ticon">&#9745;</div>
+        <div class="ticon"><i class="ri-shield-check-line"></i></div>
         <div class="n n-rera">RERA</div>
         <div class="l">Registered brokerage · Karnataka</div>
       </div>
@@ -596,11 +597,11 @@
       <div class="msg" id="waitMsg" role="alert"></div>
     </form>
     <div class="pay-methods">
-      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Cards</span>
-      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> UPI</span>
-      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg> Netbanking</span>
-      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><circle cx="18" cy="12" r="2"/></svg> Wallets</span>
-      <span class="pay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg> GPay</span>
+      <span class="pay-badge"><i class="ri-bank-card-line"></i> Cards</span>
+      <span class="pay-badge"><i class="ri-smartphone-line"></i> UPI</span>
+      <span class="pay-badge"><i class="ri-bank-line"></i> Netbanking</span>
+      <span class="pay-badge"><i class="ri-wallet-3-line"></i> Wallets</span>
+      <span class="pay-badge"><i class="ri-google-fill"></i> GPay</span>
     </div>
     <p class="pay-secure">Secured by Razorpay · 256-bit SSL encryption</p>
     <p class="seatline" id="seatLine"></p>
