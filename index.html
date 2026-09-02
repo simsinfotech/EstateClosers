@@ -808,10 +808,18 @@
   const submitBtn = document.getElementById('submitBtn');
 
   // Invisible reCAPTCHA
-  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
-    size: 'invisible',
-    callback: () => {}
-  });
+  function setupRecaptcha() {
+    if (window.recaptchaVerifier) {
+      try { window.recaptchaVerifier.clear(); } catch(e) {}
+    }
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+      size: 'invisible',
+      callback: () => {},
+      'expired-callback': () => { setupRecaptcha(); }
+    });
+    window.recaptchaVerifier.render();
+  }
+  setupRecaptcha();
 
   // Send OTP
   sendOtpBtn.addEventListener('click', async () => {
@@ -832,13 +840,17 @@
       sendOtpBtn.disabled = false;
       otpInput.focus();
     } catch (err) {
-      waitMsg.textContent = 'Failed to send OTP. Check the number and try again.';
+      console.error('OTP Error:', err.code, err.message);
+      let msg = 'Failed to send OTP.';
+      if (err.code === 'auth/too-many-requests') msg = 'Too many attempts. Try again later.';
+      else if (err.code === 'auth/invalid-phone-number') msg = 'Invalid phone number format.';
+      else if (err.code === 'auth/quota-exceeded') msg = 'SMS quota exceeded. Try again later.';
+      else if (err.code === 'auth/captcha-check-failed') msg = 'reCAPTCHA verification failed. Retrying...';
+      waitMsg.textContent = msg;
       waitMsg.className = 'msg show err';
       sendOtpBtn.textContent = 'Send OTP';
       sendOtpBtn.disabled = false;
-      window.recaptchaVerifier.render().then(widgetId => {
-        grecaptcha.reset(widgetId);
-      });
+      setupRecaptcha();
     }
   });
 
