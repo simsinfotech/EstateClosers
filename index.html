@@ -251,8 +251,13 @@
   .steps p{color:var(--dim);font-size:.97rem;margin-inline:0}
 
   /* register */
-  #register{background:var(--panel);position:relative;overflow:hidden}
-  #register::before{content:"";position:absolute;top:-100px;right:-200px;width:600px;height:400px;background:radial-gradient(closest-side,rgba(46,107,255,.08),transparent 70%);pointer-events:none}
+  /* modal overlay */
+  .modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:1.5rem}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:2.2rem 2rem;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .modal h2{font-size:clamp(1.3rem,4vw,1.7rem);margin-bottom:.6rem}
+  .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--dim);font-size:1.5rem;cursor:pointer;line-height:1;padding:.3rem;transition:color .15s}
+  .modal-close:hover{color:var(--txt)}
   form{display:grid;gap:.9rem;max-width:440px;margin-top:1.4rem;margin-inline:auto;position:relative;text-align:left}
   form .btn{font-size:.92rem;padding:.75rem 1.3rem;width:auto;justify-self:center}
   /* OTP verification */
@@ -325,7 +330,7 @@
 <nav class="brand">
   <img src="logo.png" alt="EstateClosers">
   <p class="callout">Attention: salaried professionals, career switchers &amp; stuck agents</p>
-  <a href="#register" class="nav-cta">Register Now →</a>
+  <a href="#" data-open-modal class="nav-cta">Register Now →</a>
 </nav>
 
 <!-- ===== HERO ===== -->
@@ -341,7 +346,7 @@
     </div>
     <p class="vsl-cap">Watch this first · 90 seconds</p>
 
-    <a class="btn btn-pulse" href="#register">Save my seat · ₹199 <span class="arrow">→</span></a>
+    <a class="btn btn-pulse" href="#" data-open-modal>Save my seat · ₹199 <span class="arrow">→</span></a>
     <div class="under"><span>90 minutes</span><span>Live on Zoom</span><span>Every question answered</span></div>
 
     <div class="stats">
@@ -375,7 +380,7 @@
       <li>How to start <b>without quitting your job</b>, and the exact milestone where switching becomes safe instead of scary</li>
       <li>The question every buyer silently asks in a sales gallery, and <b>the answer that closes them</b></li>
     </ul>
-    <p style="margin-top:1.8rem"><a class="btn" href="#register">I want all six · ₹199 <span class="arrow">→</span></a></p>
+    <p style="margin-top:1.8rem"><a class="btn" href="#" data-open-modal>I want all six · ₹199 <span class="arrow">→</span></a></p>
   </div>
 </section>
 
@@ -405,7 +410,7 @@
       <p class="fix">The 90-day training path · shown in full on Sunday</p>
     </div>
 
-    <p style="margin-top:1.8rem"><a class="btn" href="#register">Show me the path · ₹199 <span class="arrow">→</span></a></p>
+    <p style="margin-top:1.8rem"><a class="btn" href="#" data-open-modal>Show me the path · ₹199 <span class="arrow">→</span></a></p>
   </div>
 </section>
 
@@ -483,7 +488,7 @@
       <div class="row"><div><b>Priority access to Batch 1 seats</b><p>The full program takes limited seats per batch. Attendees hear first, before any public announcement.</p></div><span class="val">Bonus 02</span></div>
       <div class="row total"><div><b>Your price</b></div><span class="val">₹199</span></div>
     </div>
-    <p style="margin-top:1.8rem"><a class="btn" href="#register">Take the seat · ₹199 <span class="arrow">→</span></a></p>
+    <p style="margin-top:1.8rem"><a class="btn" href="#" data-open-modal>Take the seat · ₹199 <span class="arrow">→</span></a></p>
   </div>
 </section>
 
@@ -582,9 +587,11 @@
 </section>
 
 <!-- ===== REGISTER ===== -->
-<section id="register">
-  <div class="wrap">
-    <h2>Look. We could keep typing. Or you could just <em>take the seat.</em></h2>
+<!-- ===== REGISTRATION MODAL ===== -->
+<div class="modal-overlay" id="regModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close"><i class="ri-close-line"></i></button>
+    <h2>Take the seat. <em>₹199.</em></h2>
     <form id="regForm" novalidate>
       <div>
         <label for="name">Name</label>
@@ -622,10 +629,8 @@
     </div>
     <p class="pay-secure"><i class="ri-lock-line"></i>Secured by Razorpay · 256-bit SSL encryption</p>
     <p class="seatline">Your Zoom link and reminders arrive on WhatsApp instantly after payment.</p>
-
-    <p class="ps"><b>P.S.</b> The webinar happens once, live, and is never recorded. The numbers go on screen for the people in the room. If you're reading this a second time, you already know you're coming. The only question is whether a seat is still open when you decide.</p>
   </div>
-</section>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer>
@@ -640,7 +645,7 @@
 <!-- ===== STICKY MOBILE BAR ===== -->
 <div class="sticky" role="complementary">
   <small><b>Sun 20 Sept · ₹199</b><br><span id="cd3">--:--</span></small>
-  <a class="btn" href="#register">Save my seat</a>
+  <a class="btn" href="#" data-open-modal>Save my seat</a>
 </div>
 
 <script>
@@ -686,6 +691,32 @@
     }, { rootMargin: '200px' });
     observer.observe(vslIframe);
   }
+
+  // Modal open/close
+  const modal = document.getElementById('regModal');
+  document.querySelectorAll('[data-open-modal]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  document.getElementById('modalClose').addEventListener('click', () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 
   // Form handling
   const form = document.getElementById('regForm');
