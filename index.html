@@ -340,7 +340,7 @@
 
     <!-- VSL video -->
     <div class="vsl">
-      <iframe src="about:blank" data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&modestbranding=1" title="Watch first: 90 seconds" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <video src="final_captioned.mp4" controls playsinline preload="metadata" title="Watch first: 90 seconds"></video>
     </div>
     <p class="vsl-cap">Watch this first · 90 seconds</p>
 
@@ -676,19 +676,6 @@
   setInterval(tick, 1000);
 
 
-  // Lazy load video iframe when it scrolls into view
-  const vslIframe = document.querySelector('.vsl iframe[data-src]');
-  if (vslIframe) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          vslIframe.src = vslIframe.dataset.src;
-          observer.unobserve(vslIframe);
-        }
-      });
-    }, { rootMargin: '200px' });
-    observer.observe(vslIframe);
-  }
 
   // Modal open/close
   const modal = document.getElementById('regModal');
