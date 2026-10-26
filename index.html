@@ -225,6 +225,22 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 .claim p{margin-top:8px;color:var(--soft)}
 .wa{display:inline-block;margin-top:18px;color:var(--soft);font-weight:600;min-height:44px;line-height:44px}
 
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px}
+.modal-overlay.show{display:flex}
+.modal{background:#111;border:1px solid rgba(208,254,22,.3);border-radius:20px;padding:32px 24px;width:100%;max-width:420px;position:relative}
+.modal h3{font-size:1.4rem;margin-bottom:6px;letter-spacing:-0.02em}
+.modal .modal-sub{color:var(--dim);font-size:.9rem;margin-bottom:22px}
+.modal label{display:block;font-family:var(--f-display);font-weight:600;font-size:.85rem;letter-spacing:.02em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
+.modal input{display:block;width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--white);font-size:1rem;font-family:var(--f-body);margin-bottom:16px;outline:none;transition:border-color .2s}
+.modal input:focus{border-color:var(--lime)}
+.modal input::placeholder{color:rgba(255,255,255,.3)}
+.modal-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border:none;background:rgba(255,255,255,.1);color:var(--white);border-radius:50%;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+.modal .btn{margin-top:8px;border:none;cursor:pointer}
+.modal .btn:disabled{opacity:.5;cursor:wait}
+.step{display:none}.step.active{display:block}
+.wa-join{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:#25D366;color:#fff;font-family:var(--f-display);font-weight:800;font-size:1.05rem;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;margin-top:16px}
+
 /* Footer */
 footer{padding:40px 0 48px;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:var(--dim);font-size:.8rem}
 footer .brand{font-family:var(--f-display);font-weight:800;font-size:1.3rem;color:var(--white);letter-spacing:-0.02em;margin-bottom:10px}
@@ -587,8 +603,40 @@ footer p + p{margin-top:10px}
   </div>
 </footer>
 
+<!-- REGISTRATION MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">&times;</button>
+
+    <!-- Step 1: Form -->
+    <div class="step active" id="step1">
+      <h3>Reserve Your Seat</h3>
+      <p class="modal-sub">Fill in your details, then pay ₹199 to confirm.</p>
+      <form id="regForm">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" name="fullName" placeholder="Your full name" required>
+        <label for="femail">Email</label>
+        <input type="email" id="femail" name="email" placeholder="you@example.com" required>
+        <label for="fphone">WhatsApp Number</label>
+        <input type="tel" id="fphone" name="phone" placeholder="+91 9XXXXXXXXX" required>
+        <label for="fcity">City</label>
+        <input type="text" id="fcity" name="city" placeholder="Bangalore" required>
+        <button type="submit" class="btn" id="submitBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg>Proceed to Pay ₹199</button>
+      </form>
+    </div>
+
+    <!-- Step 2: Payment confirmation -->
+    <div class="step" id="step2">
+      <h3>Payment Done?</h3>
+      <p class="modal-sub">After completing payment on Razorpay, click below to join the WhatsApp group.</p>
+      <a class="wa-join" href="https://chat.whatsapp.com/CQqKdMYFbLWH82t7uCJBxt" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.1-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.4-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.9.9-3.4-.3-.4c-1-1.6-1.5-3.4-1.5-5.3 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.9 1.9 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>Join WhatsApp Group</a>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
+  /* Carousel */
   var list=document.querySelector('.eps');
   var prev=document.getElementById('prevBtn');
   var next=document.getElementById('nextBtn');
@@ -599,6 +647,73 @@ footer p + p{margin-top:10px}
   }
   prev.addEventListener('click',function(){scrollBy(-1)});
   next.addEventListener('click',function(){scrollBy(1)});
+
+  /* Modal */
+  var modal=document.getElementById('modal');
+  var step1=document.getElementById('step1');
+  var step2=document.getElementById('step2');
+  var form=document.getElementById('regForm');
+  var submitBtn=document.getElementById('submitBtn');
+
+  // Open modal on any reserve/CTA button click
+  document.querySelectorAll('a.btn, .topbar a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      modal.classList.add('show');
+      step1.classList.add('active');
+      step2.classList.remove('active');
+    });
+  });
+
+  // Close modal
+  document.getElementById('modalClose').addEventListener('click',function(){
+    modal.classList.remove('show');
+  });
+  modal.addEventListener('click',function(e){
+    if(e.target===modal) modal.classList.remove('show');
+  });
+
+  // Form submit → Google Sheets → Razorpay
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    submitBtn.disabled=true;
+    submitBtn.textContent='Submitting...';
+
+    var data={
+      fullName:document.getElementById('fname').value,
+      email:document.getElementById('femail').value,
+      phone:document.getElementById('fphone').value,
+      city:document.getElementById('fcity').value
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbwSI-BBhGYGpFYa_Pg7MTXWXRHeu5r3ymRZKSlIa3K1Zt9npiyAWZnLedXK3UEWVK8i/exec',{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(){
+      // Show step 2 and open Razorpay
+      step1.classList.remove('active');
+      step2.classList.add('active');
+      window.open('https://rzp.io/rzp/u5toGi5n','_blank');
+      submitBtn.disabled=false;
+      submitBtn.textContent='Proceed to Pay ₹199';
+    }).catch(function(){
+      // Still proceed even if sheets fails
+      step1.classList.remove('active');
+      step2.classList.add('active');
+      window.open('https://rzp.io/rzp/u5toGi5n','_blank');
+      submitBtn.disabled=false;
+      submitBtn.textContent='Proceed to Pay ₹199';
+    });
+  });
+
+  // If user returns from payment (check URL param)
+  if(window.location.search.indexOf('payment=done')>-1){
+    modal.classList.add('show');
+    step1.classList.remove('active');
+    step2.classList.add('active');
+  }
 })();
 </script>
 
