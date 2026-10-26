@@ -121,8 +121,10 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 .auth-body p + p{margin-top:16px}
 
 /* Blueprint episodes */
-.eps{display:grid;gap:22px;max-width:720px;margin-inline:auto}
-.ep{border-radius:26px;padding:22px 12px 14px;border:1px solid rgba(208,254,22,.45);background:linear-gradient(to top,#D0FE16 0%,rgba(208,254,22,.42) 16%,rgba(208,254,22,.08) 52%,#070707 78%)}
+.eps{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 16px 16px;scrollbar-width:none;list-style:none}
+.eps::-webkit-scrollbar{display:none}
+.ep{flex:0 0 calc(100% - 32px);scroll-snap-align:center;border-radius:26px;padding:22px 12px 14px;border:1px solid rgba(208,254,22,.45);background:linear-gradient(to top,#D0FE16 0%,rgba(208,254,22,.42) 16%,rgba(208,254,22,.08) 52%,#070707 78%)}
+@media(min-width:760px){.eps{gap:22px;padding:0 calc((100% - 1080px)/2) 16px}.ep{flex:0 0 520px}}
 .ep-head{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:0 12px}
 .ep-num{text-align:center;line-height:1}
 .ep-num span{display:block;font-family:var(--f-num);font-weight:600;font-size:1.05rem;letter-spacing:-0.02em}
@@ -285,10 +287,11 @@ footer p + p{margin-top:10px}
 </section>
 
 <!-- BLUEPRINT -->
-<section class="sec" style="padding-top:0">
+<section class="sec" style="padding-top:0;overflow:hidden">
   <div class="wrap">
     <h2 class="sec-title">Your 5-Part Closing <em>Blueprint</em></h2>
     <p class="sec-sub">One live session, in the exact order a deal happens on our desk.</p>
+  </div>
     <ol class="eps">
       <li class="ep">
         <div class="ep-head"><div class="ep-num"><span>Part</span><b>1</b></div><h3>Where Serious Buyers Actually Come From</h3></div>
@@ -336,6 +339,7 @@ footer p + p{margin-top:10px}
         </ul>
       </li>
     </ol>
+  <div class="wrap">
     <div class="cta"><a class="btn" href="https://rzp.io/l/YOUR-LINK"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg>Reserve my seat</a></div>
   </div>
 </section>
