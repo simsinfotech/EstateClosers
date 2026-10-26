@@ -243,19 +243,19 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 
 /* ---------- Mobile Responsive ---------- */
 @media(max-width:759px){
-  /* Hero: show full bg image */
-  .hero{background:#000 url('hero-bg.jpg') center center/contain no-repeat;padding-bottom:32px}
+  /* Hero: full bg visible with green stage lights */
+  .hero{background:#000 url('hero-bg.jpg') center top/cover no-repeat;padding-bottom:28px}
   .hero::before{background:
-    linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.4) 30%,rgba(0,0,0,0.8) 65%,#000 100%)}
-  .hero-stage{max-width:260px;padding-top:20px}
-  .hero-content{margin-top:0}
-  .lockup img{height:48px!important}
-  .lockup{gap:8px}
-  .lockup i{height:18px}
-  .hero h1{font-size:1.45rem;margin-top:16px;padding:0 8px}
-  .hero .lead{font-size:.88rem;padding:0 12px}
-  .cta{margin-top:28px}
-  .ticks{gap:8px 16px;font-size:.8rem;padding:0 8px}
+    linear-gradient(180deg,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.15) 25%,rgba(0,0,0,0.5) 55%,rgba(0,0,0,0.85) 75%,#000 100%)}
+  .hero-stage{max-width:320px;padding-top:10px}
+  .hero-content{margin-top:-30px}
+  .lockup img{height:52px!important}
+  .lockup{gap:10px}
+  .lockup i{height:20px}
+  .hero h1{font-size:1.4rem;margin-top:14px;padding:0 8px}
+  .hero .lead{font-size:.86rem;padding:0 12px}
+  .cta{margin-top:24px}
+  .ticks{gap:8px 16px;font-size:.78rem;padding:0 8px}
 
   /* Topbar */
   .topbar{padding:6px 10px 8px}
