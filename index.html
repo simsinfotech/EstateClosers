@@ -82,8 +82,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 .hero-stage{position:relative;z-index:1;width:100%;max-width:380px;margin:0 auto;padding-top:40px}
 .hero-stage::before{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160%;height:40%;background:radial-gradient(ellipse at 50% 100%,rgba(208,254,22,0.15) 0%,rgba(208,254,22,0.05) 30%,transparent 70%);pointer-events:none;z-index:0}
 .hero-stage::after{content:"";position:absolute;top:10%;left:50%;transform:translateX(-50%);width:80%;height:90%;background:radial-gradient(ellipse at 50% 20%,rgba(208,254,22,0.06) 0%,transparent 60%);pointer-events:none;z-index:0}
-.hero-stage img{position:relative;z-index:1;width:100%;height:auto;display:block}
-.hero-content{position:relative;z-index:2;margin-top:-10px}
+.hero-stage img{position:relative;z-index:1;width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 60%,rgba(0,0,0,0.6) 80%,rgba(0,0,0,0) 100%);mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 60%,rgba(0,0,0,0.6) 80%,rgba(0,0,0,0) 100%)}
+.hero-content{position:relative;z-index:2;margin-top:-40px}
 .lockup{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-display);font-weight:800;font-size:1.15rem;letter-spacing:-0.02em}
 .lockup i{width:1px;height:24px;background:rgba(255,255,255,.5)}
 .lockup span:last-child{font-family:var(--f-num);font-weight:800;font-size:.8rem;line-height:1.05;text-align:left;letter-spacing:.02em;text-transform:uppercase}
