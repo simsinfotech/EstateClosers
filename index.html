@@ -173,14 +173,12 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 
 /* Learn */
 .lgrid{display:grid;gap:18px}
-.lcard{display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
+.lcard{display:flex;flex-direction:column;gap:0;padding:24px 22px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
 .lcard:hover{transform:translateY(-6px);box-shadow:0 16px 48px -12px rgba(208,254,22,.3);border-color:rgba(208,254,22,.45)}
-.lcard-icon{width:100%;height:140px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(208,254,22,.12) 0%,rgba(208,254,22,.03) 100%);border-bottom:1px solid rgba(208,254,22,.15);color:var(--lime);transition:background .25s ease}
-.lcard:hover .lcard-icon{background:linear-gradient(145deg,rgba(208,254,22,.22) 0%,rgba(208,254,22,.08) 100%)}
-.lcard:hover .lcard-icon svg{transform:scale(1.15)}
-.lcard-icon svg{transition:transform .25s ease}
-.lcard h3{font-family:var(--f-display);font-weight:700;font-size:1.15rem;letter-spacing:-0.01em;margin-bottom:10px;padding:22px 20px 0}
-.lcard p{color:var(--soft);font-size:.92rem;line-height:1.5;padding:0 20px 24px}
+.lcard-num{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--lime) 0%,#8DB000 100%);color:var(--black);font-family:var(--f-num);font-weight:900;font-size:1.2rem;margin-bottom:16px;transition:transform .25s ease}
+.lcard:hover .lcard-num{transform:scale(1.1)}
+.lcard h3{font-family:var(--f-display);font-weight:700;font-size:1.15rem;letter-spacing:-0.01em;margin-bottom:10px}
+.lcard p{color:var(--soft);font-size:.92rem;line-height:1.5}
 @media(min-width:720px){.lgrid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.lgrid{grid-template-columns:repeat(3,1fr)}}
 
@@ -475,23 +473,19 @@ footer p + p{margin-top:10px}
         <div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg></div>
         <p class="stage-num">2020</p>
         <p>Estate Hive <strong>starts selling homes.</strong></p>
-        <div class="card"><figure class="ph"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&amp;q=80" alt="Estate Hive early office"></figure></div>
       </article>
       <article class="stage">
         <div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.4 8.5 8 9 4.6-.5 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <p class="stage-num">RERA</p>
         <p>We become a <strong>RERA-registered brokerage</strong>, trusted to sell for India’s biggest developers.</p>
-        <div class="card"><figure class="ph"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&amp;q=80" alt="Professional real estate office"></figure></div>
       </article>
       <article class="stage">
         <div class="badge"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <p class="stage-num">6 Cities</p>
         <p>The desk grows to <strong>Bengaluru, Hyderabad, Chennai, Pune, Mumbai and Delhi.</strong></p>
-        <div class="card"><figure class="ph"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&amp;q=80" alt="Real estate team"></figure></div>
       </article>
       <article class="stage stage-total">
         <div class="card">
-          <figure class="ph"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&amp;q=80" alt="Deal handshake"></figure>
           <p class="stage-num">₹2.7 Cr+</p>
           <p>In the last 3 months alone, our closers earned <strong>₹2.7 Cr in commissions.</strong></p>
         </div>
@@ -532,30 +526,12 @@ footer p + p{margin-top:10px}
     <h2 class="sec-title">What You’ll Learn In One Live Session</h2>
     <p class="sec-sub">The skills that decide whether you earn in real estate, or quit in month two.</p>
     <ul class="lgrid">
-      <li class=”card lcard”>
-        <div class=”lcard-icon”><svg width=”48” height=”48” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><circle cx=”12” cy=”12” r=”10”/><path d=”m9 12 2 2 4-4”/></svg></div>
-        <h3>The Skill Everyone Skips</h3><p>Everyone teaches lead generation. <strong>Almost nobody teaches the close.</strong> That’s where we’ll spend our time.</p>
-      </li>
-      <li class=”card lcard”>
-        <div class=”lcard-icon”><svg width=”48” height=”48” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z”/></svg></div>
-        <h3>Cold Calls That Book Visits</h3><p>A simple structure for the first call, so you <strong>stop freezing</strong> and start booking site visits.</p>
-      </li>
-      <li class=”card lcard”>
-        <div class=”lcard-icon”><svg width=”48” height=”48” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2”/><circle cx=”12” cy=”7” r=”4”/><path d=”M2 12h2m16 0h2”/></svg></div>
-        <h3>Read Any Buyer In 5 Minutes</h3><p>Tell the <strong>serious buyer</strong> from the browser and the time-waster, before you lose a weekend to them.</p>
-      </li>
-      <li class=”card lcard”>
-        <div class=”lcard-icon”><svg width=”48” height=”48” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M12 3 4 6v6c0 5 3.4 8.5 8 9 4.6-.5 8-4 8-9V6z”/><path d=”m9 12 2 2 4-4”/></svg></div>
-        <h3>Objections, Handled</h3><p>Price, possession, a spouse who isn’t convinced, “I’ll think about it”. <strong>Hear exactly what our closers say back.</strong></p>
-      </li>
-      <li class=”card lcard”>
-        <div class=”lcard-icon”><svg width=”48” height=”48” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M12 2 15 8.5l7 .9-5 4.8 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.8 7-.9z”/></svg></div>
-        <h3>The Presence Buyers Trust</h3><p>Confidence, tone, presentability, motivation and aura. Buyers judge <strong>you</strong> before they judge the property.</p>
-      </li>
-      <li class=”card lcard”>
-        <div class=”lcard-icon”><svg width=”48” height=”48” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M3 3v18h18”/><path d=”m7 14 4-4 3 3 5-6”/></svg></div>
-        <h3>A Skill Nobody Can Take From You</h3><p>Projects end and markets move. <strong>Knowing how to close</strong> goes with you to every job you’ll ever have.</p>
-      </li>
+      <li class=”card lcard”><div class=”lcard-num”>01</div><h3>The Skill Everyone Skips</h3><p>Everyone teaches lead generation. <strong>Almost nobody teaches the close.</strong> That’s where we’ll spend our time.</p></li>
+      <li class=”card lcard”><div class=”lcard-num”>02</div><h3>Cold Calls That Book Visits</h3><p>A simple structure for the first call, so you <strong>stop freezing</strong> and start booking site visits.</p></li>
+      <li class=”card lcard”><div class=”lcard-num”>03</div><h3>Read Any Buyer In 5 Minutes</h3><p>Tell the <strong>serious buyer</strong> from the browser and the time-waster, before you lose a weekend to them.</p></li>
+      <li class=”card lcard”><div class=”lcard-num”>04</div><h3>Objections, Handled</h3><p>Price, possession, a spouse who isn’t convinced, “I’ll think about it”. <strong>Hear exactly what our closers say back.</strong></p></li>
+      <li class=”card lcard”><div class=”lcard-num”>05</div><h3>The Presence Buyers Trust</h3><p>Confidence, tone, presentability, motivation and aura. Buyers judge <strong>you</strong> before they judge the property.</p></li>
+      <li class=”card lcard”><div class=”lcard-num”>06</div><h3>A Skill Nobody Can Take From You</h3><p>Projects end and markets move. <strong>Knowing how to close</strong> goes with you to every job you’ll ever have.</p></li>
     </ul>
     <div class="cta"><a class="btn" href="https://rzp.io/rzp/u5toGi5n"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg>Reserve my seat</a></div>
   </div>
@@ -570,7 +546,6 @@ footer p + p{margin-top:10px}
         <div class="chap-rail"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg></div>
         <div>
           <h3>It Started With <span class="fill">[Your Starting Point]</span></h3>
-          <figure class="ph"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&amp;q=80" alt="Early days"></figure>
           <p><span class="fill">[2–3 lines: what you were doing before real estate, your first call or first deal, and what made you go all in.]</span></p>
         </div>
       </article>
@@ -578,7 +553,6 @@ footer p + p{margin-top:10px}
         <div class="chap-rail"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg></div>
         <div>
           <h3>We Built Estate Hive Into A RERA-Registered Brokerage</h3>
-          <figure class="ph"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&amp;q=80" alt="Estate Hive team"></figure>
           <p>We started selling homes in 2020. Today, Estate Hive is a <strong>RERA-registered brokerage</strong> working across <strong>6 cities.</strong></p>
           <p>Our closers sell for <strong>Prestige, Sobha, Godrej, Lodha, Sattva, Assetz</strong> and more.</p>
         </div>
@@ -587,7 +561,6 @@ footer p + p{margin-top:10px}
         <div class="chap-rail"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg></div>
         <div>
           <h3>₹2.7 Cr In Commissions In The Last 3 Months</h3>
-          <figure class="ph"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&amp;q=80" alt="Booking handover"></figure>
           <p>Not from theory. From calls, site visits and bookings, every single week.</p>
           <ul class="sparkle">
             <li>✦ <strong>Selling homes since 2020</strong></li>
@@ -601,7 +574,6 @@ footer p + p{margin-top:10px}
         <div class="chap-rail"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg></div>
         <div>
           <h3>Then I Noticed What Nobody Was Teaching</h3>
-          <figure class="ph"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&amp;q=80" alt="Making calls"></figure>
           <p>Every course out there teaches you how to get leads. Almost none show you what happens <strong>after the phone rings</strong>: the cold call, the site visit, the close.</p>
           <p>That’s the part that decides whether you earn.</p>
         </div>
@@ -610,7 +582,6 @@ footer p + p{margin-top:10px}
         <div class="chap-rail"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg></div>
         <div>
           <h3>So I Started JusClosers</h3>
-          <figure class="ph"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&amp;q=80" alt="JusClosers training session"></figure>
           <p>To train closers the way we train our own: on <strong>real calls, real site visits and real bookings.</strong></p>
           <p><em>Sales is a skill nobody can take away from you. And the best people we train get invited to join Estate Hive.</em></p>
         </div>
@@ -623,7 +594,6 @@ footer p + p{margin-top:10px}
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <article class="guest">
-      <figure class="ph"><img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&amp;q=80" alt="Co-host on site"></figure>
       <div class="guest-body">
         <h3>But I Didn’t Want To Teach This Alone. So I Brought On A Special Guest: <span class="hl">[Name]</span></h3>
         <p><span class="fill">[2–3 lines: their role at Estate Hive, what they’ve closed, and which part of the masterclass they’ll take.]</span></p>
@@ -663,7 +633,6 @@ footer p + p{margin-top:10px}
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <article class="card why">
-      <figure class="ph"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&amp;q=80" alt="Closers at work"></figure>
       <div class="why-body">
         <h2>“If It Works, Why Only ₹199?”</h2>
         <p>I’ll be straight with you. <strong>Estate Hive is hiring closers</strong>, and this masterclass is how we find them. The best people we train get <strong>invited to join our desk.</strong></p>
@@ -694,7 +663,6 @@ footer p + p{margin-top:10px}
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <div class="claim">
-      <figure class="ph"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&amp;q=80" alt="Professional portrait"></figure>
       <h2>Lock In Your Seat Below</h2>
       <p>Each batch has limited seats. After payment, you’ll be added to the WhatsApp group.</p>
       <div class="cta" style="margin-top:28px"><a class="btn" href="https://rzp.io/rzp/u5toGi5n"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg>Reserve my seat for ₹199</a></div>
