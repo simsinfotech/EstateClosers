@@ -121,10 +121,8 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 .auth-body p + p{margin-top:16px}
 
 /* Blueprint episodes */
-.eps{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px;scrollbar-width:none}
-.eps::-webkit-scrollbar{display:none}
-.ep{flex:0 0 85%;max-width:400px;scroll-snap-align:start;border-radius:26px;padding:22px 12px 14px;border:1px solid rgba(208,254,22,.45);background:linear-gradient(to top,#D0FE16 0%,rgba(208,254,22,.42) 16%,rgba(208,254,22,.08) 52%,#070707 78%)}
-@media(min-width:760px){.ep{flex:0 0 42%;max-width:440px}}
+.eps{display:grid;gap:22px;max-width:720px;margin-inline:auto}
+.ep{border-radius:26px;padding:22px 12px 14px;border:1px solid rgba(208,254,22,.45);background:linear-gradient(to top,#D0FE16 0%,rgba(208,254,22,.42) 16%,rgba(208,254,22,.08) 52%,#070707 78%)}
 .ep-head{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:0 12px}
 .ep-num{text-align:center;line-height:1}
 .ep-num span{display:block;font-family:var(--f-num);font-weight:600;font-size:1.05rem;letter-spacing:-0.02em}
