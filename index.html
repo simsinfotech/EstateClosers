@@ -241,6 +241,97 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 .step{display:none}.step.active{display:block}
 .wa-join{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;background:#25D366;color:#fff;font-family:var(--f-display);font-weight:800;font-size:1.05rem;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;margin-top:16px}
 
+/* ---------- Mobile Responsive ---------- */
+@media(max-width:759px){
+  /* Hero: show full bg image */
+  .hero{background:#000 url('hero-bg.jpg') center center/contain no-repeat;padding-bottom:32px}
+  .hero::before{background:
+    linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.4) 30%,rgba(0,0,0,0.8) 65%,#000 100%)}
+  .hero-stage{max-width:260px;padding-top:20px}
+  .hero-content{margin-top:0}
+  .lockup img{height:48px!important}
+  .lockup{gap:8px}
+  .lockup i{height:18px}
+  .hero h1{font-size:1.45rem;margin-top:16px;padding:0 8px}
+  .hero .lead{font-size:.88rem;padding:0 12px}
+  .cta{margin-top:28px}
+  .ticks{gap:8px 16px;font-size:.8rem;padding:0 8px}
+
+  /* Topbar */
+  .topbar{padding:6px 10px 8px}
+  .topbar-in{gap:5px}
+  .topbar-in img{height:44px!important}
+  .topbar p{font-size:11px}
+  .topbar a{min-height:32px;font-size:11.5px;padding:0 14px}
+
+  /* Authority video section */
+  .auth .ph{aspect-ratio:16/9!important}
+  .auth-body{padding:20px 8px 12px}
+  .auth-body .wordmark{font-size:1.3rem;margin-bottom:14px}
+  .auth h3{font-size:1.2rem}
+
+  /* Blueprint carousel */
+  .carousel-wrap{margin:0 -20px}
+  .eps{padding:0 12px 12px;gap:12px}
+  .ep{flex:0 0 calc(100% - 24px);padding:18px 12px 14px}
+  .ep-num b{font-size:4rem}
+  .ep h3{font-size:1.15rem}
+  .ep-rows li{padding:14px 12px;gap:10px}
+  .carousel-btn{width:38px;height:38px}
+  .carousel-btn.prev{left:2px}
+  .carousel-btn.next{right:2px}
+
+  /* Results stages */
+  .stages{gap:32px}
+
+  /* Details */
+  .details-shell{padding:52px 8px 8px;border-radius:20px}
+  .dcard{padding:22px 18px 24px}
+  .dicon{width:64px;height:64px;margin-bottom:16px}
+  .dicon svg{width:30px;height:30px}
+  .dcard dt{font-size:1.15rem}
+
+  /* Learn grid */
+  .lgrid{gap:14px}
+  .lcard h3{font-size:1.05rem}
+
+  /* Timeline */
+  .chap{grid-template-columns:28px 1fr;gap:10px;padding-bottom:32px}
+  .chap h3{font-size:1rem}
+
+  /* Guest */
+  .guest{border-radius:20px;padding:10px}
+  .guest-body{padding:20px 16px;border-radius:16px}
+  .guest-body h3{font-size:1.1rem}
+
+  /* Fit */
+  .fit-col{padding:22px 18px;border-radius:18px}
+  .fit-col h3{font-size:1.1rem}
+
+  /* Why 199 */
+  .why-body{padding:20px 6px 6px}
+  .why-body h2{font-size:1.3rem;margin-bottom:14px}
+
+  /* FAQ */
+  .faq dt{padding:16px 12px;font-size:.95rem}
+  .faq dd{padding:0 12px 16px}
+
+  /* Claim */
+  .claim h2{font-size:1.3rem}
+
+  /* Section spacing */
+  .sec{padding-block:44px}
+  .sec-title{font-size:1.35rem;margin-bottom:8px}
+  .sec-sub{font-size:.88rem;margin-bottom:24px}
+
+  /* Modal */
+  .modal{padding:24px 18px;border-radius:16px}
+  .modal h3{font-size:1.2rem}
+  .modal input{padding:10px 12px;font-size:.95rem}
+  .modal .btn{min-height:50px;font-size:.95rem}
+  .wa-join{padding:12px 22px;font-size:.95rem}
+}
+
 /* Footer */
 footer{padding:40px 0 48px;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:var(--dim);font-size:.8rem}
 footer .brand{font-family:var(--f-display);font-weight:800;font-size:1.3rem;color:var(--white);letter-spacing:-0.02em;margin-bottom:10px}
