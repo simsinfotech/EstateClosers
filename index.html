@@ -107,9 +107,9 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 
 /* ---------- Cards ---------- */
 .card{background:var(--card);border:1px solid var(--card-line);border-radius:24px;padding:16px}
-.ph{position:relative;margin:0;border-radius:16px;background:#0E0E0E;border:1px dashed rgba(255,255,255,.16);overflow:hidden;aspect-ratio:16/10}
+.ph{position:relative;margin:0;border-radius:16px;background:#0E0E0E;border:1px dashed rgba(255,255,255,.16);overflow:hidden;width:100%;padding-top:62.5%}
 .ph:has(img){border:none}
-.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block}
 .ph figcaption{position:relative;margin:12px;padding:5px 10px;border-radius:8px;background:rgba(0,0,0,.75);color:var(--dim);font-size:.78rem}
 
 /* Authority */
@@ -194,7 +194,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 
 /* Guest */
 .guest{max-width:720px;margin-inline:auto;border-radius:28px;padding:14px;background:linear-gradient(180deg,#1C2400 0%,#0B0E00 100%);border:1px solid rgba(208,254,22,.18)}
-.guest .ph{aspect-ratio:4/3}
+.guest .ph{padding-top:75%}
 .guest-body{margin-top:14px;border-radius:22px;padding:26px 22px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.08)}
 .guest-body h3{font-size:clamp(1.2rem,4.4vw,1.6rem);line-height:1.25;letter-spacing:-0.02em}
 .guest-body p{margin-top:16px}
@@ -214,14 +214,14 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 
 /* Why 199 */
 .why{max-width:720px;margin-inline:auto}
-.why .ph{aspect-ratio:16/11}
+.why .ph{padding-top:68.75%}
 .why-body{padding:26px 10px 8px}
 .why-body h2{font-size:clamp(1.5rem,5vw,2.3rem);line-height:1.2;letter-spacing:-0.03em;margin-bottom:18px}
 .why-body p + p{margin-top:16px}
 
 /* Claim */
 .claim{max-width:720px;margin-inline:auto;text-align:center}
-.claim .ph{aspect-ratio:16/10}
+.claim .ph{padding-top:62.5%}
 .claim h2{margin-top:26px;font-size:clamp(1.4rem,4.8vw,2.2rem);letter-spacing:-0.03em}
 .claim p{margin-top:8px;color:var(--soft)}
 .wa{display:inline-block;margin-top:18px;color:var(--soft);font-weight:600;min-height:44px;line-height:44px}
@@ -266,7 +266,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
   .topbar a{min-height:32px;font-size:11.5px;padding:0 14px}
 
   /* Authority video section */
-  .auth .ph{aspect-ratio:16/9!important}
+  .auth .ph{padding-top:56.25%!important}
   .auth-body{padding:20px 8px 12px}
   .auth-body .wordmark{font-size:1.3rem;margin-bottom:14px}
   .auth h3{font-size:1.2rem}
@@ -387,7 +387,7 @@ footer p + p{margin-top:10px}
 <section class="sec">
   <div class="wrap">
     <article class="card auth">
-      <figure class="ph" style="aspect-ratio:16/9;border:none"><video src="final_captioned.mp4" controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px"></video></figure>
+      <figure class="ph" style="padding-top:56.25%;border:none"><video src="final_captioned.mp4" controls playsinline preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:16px"></video></figure>
       <div class="auth-body">
         <p class="wordmark">Estate Hive</p>
         <h3>I Don’t Just Teach Real Estate. I Run A <span class="hl">Desk That Closes Deals</span> Every Week.</h3>
