@@ -73,13 +73,17 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 @media(min-width:760px){.topbar-in{flex-direction:row;align-items:center;justify-content:center;gap:24px}.topbar p{font-size:14px}.topbar a{padding:0 26px;min-height:42px}}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;text-align:center;padding:60px 0 48px;background:#000;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(208,254,22,0.08) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 20% 30%,rgba(208,254,22,0.05) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 80% 30%,rgba(208,254,22,0.05) 0%,transparent 60%);pointer-events:none}
-.hero-stage{position:relative;z-index:1;width:100%;max-width:480px;margin:0 auto;aspect-ratio:3/4}
-.hero-stage::before{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120%;height:60%;background:radial-gradient(ellipse at 50% 100%,rgba(208,254,22,0.12) 0%,transparent 70%);pointer-events:none}
-.hero-stage img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:bottom center}
-.hero-logos{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:16px;opacity:0.5}
-.hero-logos img{height:28px;width:auto;filter:brightness(0) invert(1)}
+.hero{position:relative;text-align:center;padding:0 0 48px;background:#000;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 40% at 50% 0%,rgba(208,254,22,0.15) 0%,transparent 70%),
+  radial-gradient(ellipse 30% 50% at 15% 10%,rgba(208,254,22,0.08) 0%,transparent 60%),
+  radial-gradient(ellipse 30% 50% at 85% 10%,rgba(208,254,22,0.08) 0%,transparent 60%),
+  radial-gradient(ellipse 50% 30% at 50% 50%,rgba(208,254,22,0.04) 0%,transparent 70%);pointer-events:none;z-index:0}
+.hero-stage{position:relative;z-index:1;width:100%;max-width:380px;margin:0 auto;padding-top:40px}
+.hero-stage::before{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:160%;height:40%;background:radial-gradient(ellipse at 50% 100%,rgba(208,254,22,0.15) 0%,rgba(208,254,22,0.05) 30%,transparent 70%);pointer-events:none;z-index:0}
+.hero-stage::after{content:"";position:absolute;top:10%;left:50%;transform:translateX(-50%);width:80%;height:90%;background:radial-gradient(ellipse at 50% 20%,rgba(208,254,22,0.06) 0%,transparent 60%);pointer-events:none;z-index:0}
+.hero-stage img{position:relative;z-index:1;width:100%;height:auto;display:block}
+.hero-content{position:relative;z-index:2;margin-top:-10px}
 .lockup{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-display);font-weight:800;font-size:1.15rem;letter-spacing:-0.02em}
 .lockup i{width:1px;height:24px;background:rgba(255,255,255,.5)}
 .lockup span:last-child{font-family:var(--f-num);font-weight:800;font-size:.8rem;line-height:1.05;text-align:left;letter-spacing:.02em;text-transform:uppercase}
@@ -90,7 +94,7 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero h1{margin:22px auto 0;max-width:20ch;font-size:clamp(1.7rem,6.6vw,3.6rem);line-height:1.18;letter-spacing:-0.035em}
 .hero .lead{margin:16px auto 0;max-width:40ch;color:var(--white);font-size:.98rem}
-@media(min-width:760px){.hero .lead{font-size:1.15rem}.hero-stage{max-width:550px}}
+@media(min-width:760px){.hero .lead{font-size:1.15rem}.hero-stage{max-width:450px}}
 .ticks{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:22px;font-style:italic;font-size:.85rem}
 .ticks li{display:flex;align-items:center;gap:8px}
 .ticks svg{color:var(--lime);flex:none}
@@ -237,8 +241,9 @@ footer p + p{margin-top:10px}
 
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-stage"><img src="hero-person.png" alt="Shamique - Estate Hive Founder"></div>
   <div class="wrap">
-    <div class="hero-stage"><img src="hero-bg.jpg" alt="Shamique - Estate Hive Founder"></div>
+    <div class="hero-content">
     <div class="lockup"><span>Estate Hive</span><i aria-hidden="true"></i><span>JusClosers<br><b>Masterclass</b></span></div>
     <p class="live"><span class="dot" aria-hidden="true"></span>Live virtual event: <b>Bangalore batch</b></p>
     <h1>I Challenge YOU To Earn Your <span class="hl">First Real Estate Commission</span> In <span class="hl">90 Days</span></h1>
@@ -250,6 +255,7 @@ footer p + p{margin-top:10px}
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>No experience needed</li>
       <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg>Taught live, just ₹199</li>
     </ul>
+    </div>
   </div>
 </header>
 
