@@ -120,11 +120,19 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 .meaning{margin:18px 0 14px;color:var(--lime);font-size:1.1rem}
 .auth-body p + p{margin-top:16px}
 
-/* Blueprint episodes */
-.eps{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 16px 16px;scrollbar-width:none;list-style:none}
-.eps::-webkit-scrollbar{display:none}
-.ep{flex:0 0 calc(100% - 32px);scroll-snap-align:center;border-radius:26px;padding:22px 12px 14px;border:1px solid rgba(208,254,22,.45);background:linear-gradient(to top,#D0FE16 0%,rgba(208,254,22,.42) 16%,rgba(208,254,22,.08) 52%,#070707 78%)}
-@media(min-width:760px){.eps{gap:22px;padding:0 calc((100% - 1080px)/2) 16px}.ep{flex:0 0 520px}}
+/* Blueprint carousel */
+.carousel-wrap{position:relative;max-width:720px;margin:0 auto}
+.eps{list-style:none;padding:0;margin:0}
+.ep{display:none;border-radius:26px;padding:22px 12px 14px;border:1px solid rgba(208,254,22,.45);background:linear-gradient(to top,#D0FE16 0%,rgba(208,254,22,.42) 16%,rgba(208,254,22,.08) 52%,#070707 78%);animation:fadeIn .3s ease}
+.ep.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.carousel-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}
+.carousel-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(208,254,22,.5);background:rgba(208,254,22,.1);color:var(--lime);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.carousel-btn:hover{background:rgba(208,254,22,.25)}
+.carousel-btn:disabled{opacity:.3;cursor:default}
+.carousel-dots{display:flex;gap:8px}
+.carousel-dot{width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,.25);cursor:pointer;padding:0;transition:background .2s}
+.carousel-dot.active{background:var(--lime)}
 .ep-head{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;padding:0 12px}
 .ep-num{text-align:center;line-height:1}
 .ep-num span{display:block;font-family:var(--f-num);font-weight:600;font-size:1.05rem;letter-spacing:-0.02em}
@@ -292,6 +300,7 @@ footer p + p{margin-top:10px}
     <h2 class="sec-title">Your 5-Part Closing <em>Blueprint</em></h2>
     <p class="sec-sub">One live session, in the exact order a deal happens on our desk.</p>
   </div>
+  <div class="wrap"><div class="carousel-wrap">
     <ol class="eps">
       <li class="ep">
         <div class="ep-head"><div class="ep-num"><span>Part</span><b>1</b></div><h3>Where Serious Buyers Actually Come From</h3></div>
@@ -339,9 +348,13 @@ footer p + p{margin-top:10px}
         </ul>
       </li>
     </ol>
-  <div class="wrap">
+    <div class="carousel-nav">
+      <button class="carousel-btn" id="prevBtn" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" id="nextBtn" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </div></div>
     <div class="cta"><a class="btn" href="https://rzp.io/l/YOUR-LINK"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg>Reserve my seat</a></div>
-  </div>
 </section>
 
 <!-- RESULTS -->
@@ -578,6 +591,35 @@ footer p + p{margin-top:10px}
     <p>© 2026 Estate Hive. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+(function(){
+  var slides=document.querySelectorAll('.ep');
+  var prev=document.getElementById('prevBtn');
+  var next=document.getElementById('nextBtn');
+  var dotsWrap=document.getElementById('carouselDots');
+  var cur=0;
+  slides.forEach(function(_,i){
+    var d=document.createElement('button');
+    d.className='carousel-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Go to part '+(i+1));
+    d.addEventListener('click',function(){go(i)});
+    dotsWrap.appendChild(d);
+  });
+  function go(n){
+    slides[cur].classList.remove('active');
+    dotsWrap.children[cur].classList.remove('active');
+    cur=n;
+    slides[cur].classList.add('active');
+    dotsWrap.children[cur].classList.add('active');
+    prev.disabled=cur===0;
+    next.disabled=cur===slides.length-1;
+  }
+  prev.addEventListener('click',function(){if(cur>0)go(cur-1)});
+  next.addEventListener('click',function(){if(cur<slides.length-1)go(cur+1)});
+  go(0);
+})();
+</script>
 
 </body>
 </html>
