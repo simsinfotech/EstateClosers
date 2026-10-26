@@ -173,9 +173,12 @@ h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-optical-sizing:auto;font-
 
 /* Learn */
 .lgrid{display:grid;gap:18px}
-.lcard{display:flex;flex-direction:column;gap:16px}
-.lcard h3{font-family:var(--f-body);font-weight:700;font-size:1.2rem;letter-spacing:-0.01em;padding-inline:4px}
-.lcard p{color:var(--soft);padding:0 4px 6px}
+.lcard{display:flex;flex-direction:column;gap:0;padding:28px 24px 24px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default}
+.lcard:hover{transform:translateY(-6px);box-shadow:0 16px 48px -12px rgba(208,254,22,.25);border-color:rgba(208,254,22,.4)}
+.lcard-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(208,254,22,.15) 0%,rgba(208,254,22,.05) 100%);border:1px solid rgba(208,254,22,.2);color:var(--lime);margin-bottom:18px;transition:background .25s ease,transform .25s ease}
+.lcard:hover .lcard-icon{background:linear-gradient(135deg,rgba(208,254,22,.3) 0%,rgba(208,254,22,.1) 100%);transform:scale(1.1)}
+.lcard h3{font-family:var(--f-display);font-weight:700;font-size:1.15rem;letter-spacing:-0.01em;margin-bottom:10px}
+.lcard p{color:var(--soft);font-size:.92rem;line-height:1.5}
 @media(min-width:720px){.lgrid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.lgrid{grid-template-columns:repeat(3,1fr)}}
 
@@ -527,12 +530,30 @@ footer p + p{margin-top:10px}
     <h2 class="sec-title">What You’ll Learn In One Live Session</h2>
     <p class="sec-sub">The skills that decide whether you earn in real estate, or quit in month two.</p>
     <ul class="lgrid">
-      <li class=”card lcard”><figure class=”ph”><img src=”https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&amp;q=80” alt=”Closing a deal”></figure><h3>The Skill Everyone Skips</h3><p>Everyone teaches lead generation. <strong>Almost nobody teaches the close.</strong> That’s where we’ll spend our time.</p></li>
-      <li class=”card lcard”><figure class=”ph”><img src=”https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&amp;q=80” alt=”Cold calling”></figure><h3>Cold Calls That Book Visits</h3><p>A simple structure for the first call, so you <strong>stop freezing</strong> and start booking site visits.</p></li>
-      <li class=”card lcard”><figure class=”ph”><img src=”https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&amp;q=80” alt=”Meeting a buyer”></figure><h3>Read Any Buyer In 5 Minutes</h3><p>Tell the <strong>serious buyer</strong> from the browser and the time-waster, before you lose a weekend to them.</p></li>
-      <li class=”card lcard”><figure class=”ph”><img src=”https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&amp;q=80” alt=”Handling objections”></figure><h3>Objections, Handled</h3><p>Price, possession, a spouse who isn’t convinced, “I’ll think about it”. <strong>Hear exactly what our closers say back.</strong></p></li>
-      <li class=”card lcard”><figure class=”ph”><img src=”https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&amp;q=80” alt=”Professional presence”></figure><h3>The Presence Buyers Trust</h3><p>Confidence, tone, presentability, motivation and aura. Buyers judge <strong>you</strong> before they judge the property.</p></li>
-      <li class=”card lcard”><figure class=”ph”><img src=”https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&amp;q=80” alt=”Building skills”></figure><h3>A Skill Nobody Can Take From You</h3><p>Projects end and markets move. <strong>Knowing how to close</strong> goes with you to every job you’ll ever have.</p></li>
+      <li class=”card lcard”>
+        <div class=”lcard-icon”><svg width=”28” height=”28” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><circle cx=”12” cy=”12” r=”10”/><path d=”m9 12 2 2 4-4”/></svg></div>
+        <h3>The Skill Everyone Skips</h3><p>Everyone teaches lead generation. <strong>Almost nobody teaches the close.</strong> That’s where we’ll spend our time.</p>
+      </li>
+      <li class=”card lcard”>
+        <div class=”lcard-icon”><svg width=”28” height=”28” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z”/></svg></div>
+        <h3>Cold Calls That Book Visits</h3><p>A simple structure for the first call, so you <strong>stop freezing</strong> and start booking site visits.</p>
+      </li>
+      <li class=”card lcard”>
+        <div class=”lcard-icon”><svg width=”28” height=”28” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2”/><circle cx=”12” cy=”7” r=”4”/><path d=”M2 12h2m16 0h2”/></svg></div>
+        <h3>Read Any Buyer In 5 Minutes</h3><p>Tell the <strong>serious buyer</strong> from the browser and the time-waster, before you lose a weekend to them.</p>
+      </li>
+      <li class=”card lcard”>
+        <div class=”lcard-icon”><svg width=”28” height=”28” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M12 3 4 6v6c0 5 3.4 8.5 8 9 4.6-.5 8-4 8-9V6z”/><path d=”m9 12 2 2 4-4”/></svg></div>
+        <h3>Objections, Handled</h3><p>Price, possession, a spouse who isn’t convinced, “I’ll think about it”. <strong>Hear exactly what our closers say back.</strong></p>
+      </li>
+      <li class=”card lcard”>
+        <div class=”lcard-icon”><svg width=”28” height=”28” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M12 2 15 8.5l7 .9-5 4.8 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.8 7-.9z”/></svg></div>
+        <h3>The Presence Buyers Trust</h3><p>Confidence, tone, presentability, motivation and aura. Buyers judge <strong>you</strong> before they judge the property.</p>
+      </li>
+      <li class=”card lcard”>
+        <div class=”lcard-icon”><svg width=”28” height=”28” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”1.8” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M3 3v18h18”/><path d=”m7 14 4-4 3 3 5-6”/></svg></div>
+        <h3>A Skill Nobody Can Take From You</h3><p>Projects end and markets move. <strong>Knowing how to close</strong> goes with you to every job you’ll ever have.</p>
+      </li>
     </ul>
     <div class="cta"><a class="btn" href="https://rzp.io/rzp/u5toGi5n"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9H23l-6.8 4.9 2.6 8-6.8-4.9-6.8 4.9 2.6-8L1 9.4h8.4z"/></svg>Reserve my seat</a></div>
   </div>
