@@ -116,7 +116,7 @@ body.ready .hbot p,body.ready .hbot .r{opacity:1;transform:none}
 .scroll i{width:54px;height:1px;background:var(--line);position:relative;overflow:hidden}
 .scroll i:after{content:"";position:absolute;top:0;left:-50%;height:1px;width:50%;background:var(--cy);animation:slide 1.8s infinite}
 @keyframes slide{to{left:100%}}
-@media(max-width:860px){.hero{min-height:640px}.gw{top:44%;font-size:27vw}.me{height:58vh;bottom:1vh}.kick{top:15vh;font-size:13vw}.side{display:none}.hbot{bottom:3vh}.hbot .wrap{flex-direction:column;align-items:flex-start}.hbot .r{align-items:flex-start}.hbot p{font-size:15px;max-width:none}.hero .fade{height:38vh}.scroll{display:none}}
+@media(max-width:860px){.hero{min-height:640px}.gw{top:44%;font-size:27vw}.me{height:58vh;bottom:1vh}.kick{top:15vh;font-size:13vw}.side{display:none}.hbot{bottom:3vh}.hbot .wrap{flex-direction:column;align-items:flex-start}.hbot .r{align-items:flex-start}.hbot p{font-size:15px;max-width:none}.hero .fade{height:38vh}.scroll{display:none}.label{gap:8px}}
 
 .statement{padding:22vh 0 18vh}
 .statement p{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,68px);line-height:1.08;letter-spacing:-.035em;max-width:1150px}
@@ -812,16 +812,18 @@ footer .about p a{color:var(--cy)}
  .topbar{font-size:11.5px}.topbar .wrap{gap:12px}.topbar [data-ev-label]{display:none}
  .nav .pill{display:inline-flex!important;height:40px;padding:0 16px;font-size:13px}
  .nav .logo img{height:46px}
- .hero{height:auto!important;min-height:0!important;padding-top:620px}
- .hero canvas{height:600px!important;bottom:auto}
- .hero .glow{top:350px}
- .kick{top:100px!important;font-size:15vw}
- .mcw{font-size:13.2vw!important;top:310px!important}
- .me{top:60px!important;bottom:auto!important;height:520px!important;object-fit:contain!important}
- .hero .fade{top:480px!important;bottom:auto!important;height:160px!important}
+ .hero{height:auto!important;min-height:0!important;padding-top:420px}
+ .hero canvas{height:400px!important;bottom:auto}
+ .hero .glow{top:220px}
+ .kick{top:70px!important;font-size:13vw}
+ .mcw{font-size:11vw!important;top:210px!important}
+ .me{top:50px!important;bottom:auto!important;height:340px!important;object-fit:contain!important}
+ .hero .fade{top:320px!important;bottom:auto!important;height:120px!important}
  .hbot{position:relative!important;bottom:auto!important;padding-bottom:36px}
- .hbot h1{font-size:30px}
- .hbot .hl p{font-size:15px}
+ .hbot h1{font-size:26px}
+ .hbot .hl p{font-size:14px}
+ .meta{margin-top:14px;gap:8px}
+ .hbot .r{margin-top:6px}
  .meta span{font-size:12.5px;padding:8px 12px}
  .hbot .r{width:100%}.hbot .r .pill{width:100%;justify-content:center}.hbot .r .pill span{justify-content:center}
  .hbot .scroll{display:none}
@@ -835,6 +837,17 @@ footer .about p a{color:var(--cy)}
  .tk{grid-template-columns:1fr;text-align:center;padding:28px 22px}.tk-r .pill{width:100%;justify-content:center}.tk-r .pill span{justify-content:center}
  .mbar{display:flex}
  footer{padding-bottom:90px}
+}
+@media(max-width:420px){
+ .hero{padding-top:360px!important}
+ .hero canvas{height:340px!important}
+ .hero .glow{top:180px}
+ .kick{top:60px!important;font-size:12vw}
+ .mcw{font-size:10vw!important;top:180px!important}
+ .me{top:40px!important;height:290px!important}
+ .hero .fade{top:270px!important;height:110px!important}
+ .hbot h1{font-size:22px}
+ .nums b{font-size:clamp(28px,8vw,42px)}
 }
 
 .vid{padding:16vh 0 10vh}
@@ -867,19 +880,6 @@ footer .about p a{color:var(--cy)}
  .vtag{left:12px;bottom:12px;padding:6px 11px;font-size:11.5px}
  .vt .vcta{display:none}
  .vp{width:62px;height:62px}.vp svg{width:26px;height:26px}
-}
-@media(max-width:860px){
- .hero{padding-top:520px!important}
- .hero canvas{height:500px!important}
- .hero .glow{top:280px}
- .kick{top:80px!important;font-size:12vw}
- .mcw{top:250px!important}
- .me{top:40px!important;height:440px!important;object-fit:contain!important}
- .hero .fade{top:400px!important;height:140px!important}
- .hbot h1{font-size:27px}
- .hbot .hl p{display:none}
- .meta{margin-top:14px;gap:8px}
- .hbot .r{margin-top:6px}
 }
 
 </style>
