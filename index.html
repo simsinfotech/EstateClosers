@@ -97,9 +97,9 @@ body:after{content:"";position:fixed;inset:-50%;z-index:200;pointer-events:none;
 .hero .glow{position:absolute;width:80vw;height:80vw;max-width:1100px;max-height:1100px;border-radius:50%;background:radial-gradient(circle,rgba(18,198,240,.30),rgba(18,198,240,.05) 45%,transparent 65%);left:50%;top:62%;transform:translate(-50%,-50%);pointer-events:none}
 .gw{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);font-family:var(--disp);font-weight:800;font-size:clamp(120px,23vw,420px);letter-spacing:-.07em;line-height:.8;white-space:nowrap;background:linear-gradient(180deg,#EAF8FF 0%,#4FD8FF 45%,rgba(18,198,240,.0) 92%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;transition:opacity 1.4s .2s,letter-spacing 1.6s cubic-bezier(.2,.8,.2,1);will-change:transform;pointer-events:none;user-select:none}
 body.ready .gw{opacity:1;letter-spacing:-.05em}
-.me{position:absolute;left:50%;bottom:0;height:88vh;width:auto;max-width:none;transform:translate(-50%,8%) scale(1.04);opacity:0;filter:drop-shadow(0 0 1px rgba(160,235,255,.9)) drop-shadow(0 0 28px rgba(79,216,255,.35)) drop-shadow(0 40px 60px rgba(0,0,0,.6));transition:transform 1.6s .25s cubic-bezier(.2,.8,.2,1),opacity 1.2s .25s;will-change:transform;z-index:2}
+.me{position:absolute;left:50%;bottom:2vh;height:78vh;width:auto;max-width:none;transform:translate(-50%,0) scale(1.02);opacity:0;filter:drop-shadow(0 0 1px rgba(160,235,255,.9)) drop-shadow(0 0 28px rgba(79,216,255,.35)) drop-shadow(0 40px 60px rgba(0,0,0,.6));transition:transform 1.6s .25s cubic-bezier(.2,.8,.2,1),opacity 1.2s .25s;will-change:transform;z-index:2}
 body.ready .me{opacity:1;transform:translate(-50%,0) scale(1)}
-.hero .fade{position:absolute;left:0;right:0;bottom:0;height:34vh;background:linear-gradient(180deg,transparent,var(--ink) 92%);z-index:3;pointer-events:none}
+.hero .fade{position:absolute;left:0;right:0;bottom:0;height:26vh;background:linear-gradient(180deg,transparent,var(--ink) 92%);z-index:3;pointer-events:none}
 .kick{position:absolute;z-index:4;left:max(32px,calc((100vw - 1280px)/2 + 32px));top:19vh;font-family:var(--serif);font-style:italic;font-size:clamp(44px,7vw,120px);line-height:.9;letter-spacing:-.02em;overflow:hidden;padding-bottom:.1em}
 .kick span{display:inline-block;transform:translateY(110%);transition:transform 1.2s .35s cubic-bezier(.2,.8,.2,1)}
 body.ready .kick span{transform:none}
@@ -116,7 +116,7 @@ body.ready .hbot p,body.ready .hbot .r{opacity:1;transform:none}
 .scroll i{width:54px;height:1px;background:var(--line);position:relative;overflow:hidden}
 .scroll i:after{content:"";position:absolute;top:0;left:-50%;height:1px;width:50%;background:var(--cy);animation:slide 1.8s infinite}
 @keyframes slide{to{left:100%}}
-@media(max-width:860px){.hero{min-height:640px}.gw{top:44%;font-size:27vw}.me{height:66vh}.kick{top:15vh;font-size:13vw}.side{display:none}.hbot{bottom:3vh}.hbot .wrap{flex-direction:column;align-items:flex-start}.hbot .r{align-items:flex-start}.hbot p{font-size:15px;max-width:none}.hero .fade{height:48vh}.scroll{display:none}}
+@media(max-width:860px){.hero{min-height:640px}.gw{top:44%;font-size:27vw}.me{height:58vh;bottom:1vh}.kick{top:15vh;font-size:13vw}.side{display:none}.hbot{bottom:3vh}.hbot .wrap{flex-direction:column;align-items:flex-start}.hbot .r{align-items:flex-start}.hbot p{font-size:15px;max-width:none}.hero .fade{height:38vh}.scroll{display:none}}
 
 .statement{padding:22vh 0 18vh}
 .statement p{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.6vw,68px);line-height:1.08;letter-spacing:-.035em;max-width:1150px}
@@ -817,7 +817,7 @@ footer .about p a{color:var(--cy)}
  .hero .glow{top:330px}
  .kick{top:122px!important;font-size:15vw}
  .mcw{font-size:13.2vw!important;top:300px!important}
- .me{top:170px!important;bottom:auto!important;height:400px!important}
+ .me{top:140px!important;bottom:auto!important;height:380px!important}
  .hero .fade{top:440px!important;bottom:auto!important;height:150px!important}
  .hbot{position:relative!important;bottom:auto!important;padding-bottom:36px}
  .hbot h1{font-size:30px}
@@ -874,7 +874,7 @@ footer .about p a{color:var(--cy)}
  .hero .glow{top:250px}
  .kick{top:116px!important;font-size:12vw}
  .mcw{top:235px!important}
- .me{top:128px!important;height:310px!important}
+ .me{top:110px!important;height:290px!important}
  .hero .fade{top:330px!important;height:110px!important}
  .hbot h1{font-size:27px}
  .hbot .hl p{display:none}
