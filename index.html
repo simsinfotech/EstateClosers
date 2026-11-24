@@ -13,7 +13,7 @@
 <script>
 /* ===== SETTINGS ===== */
 window.JC = {
-  ENQUIRY_ENDPOINT: "",   /* optional: Google Sheet / Formspree / CRM webhook URL. Empty = enquiry opens in WhatsApp */
+  ENQUIRY_ENDPOINT: "https://script.google.com/macros/s/AKfycbwKpC3JoWUaqxKm8Ps-ozkaO6JmJXLrqNL6_frFeY1WzAEQClJ4Xm26p4pJ38--O3vg/exec",
   WHATSAPP: "919036317766",
   META_PIXEL_ID: "",
   PRIVACY_URL: "/privacy", TERMS_URL: "/terms", REFUND_URL: "/refund"
@@ -1466,7 +1466,7 @@ if(co){if(d.company.length<2)bad.push(f.company);if(!d.industry)bad.push(f.indus
 if(bad.length){bad.forEach(function(x){x.closest('.ef').classList.add('bad');});err.textContent=co?'Please fill in your name, a valid 10-digit phone number, company and industry.':'Please fill in your name, a valid 10-digit phone number and where you are today.';return;}
 var btn=f.querySelector('.eqs');btn.disabled=true;
 function done(){f.classList.add('sent');if(window.fbq)fbq('track','Lead',{content_name:co?('Company: '+d.need):d.program});}
-if(C.ENQUIRY_ENDPOINT){fetch(C.ENQUIRY_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;done();}).catch(function(){btn.disabled=false;err.textContent='Something went wrong. Please try again in a moment.';});}
+if(C.ENQUIRY_ENDPOINT){var q=Object.keys(d).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(d[k]);}).join('&');fetch(C.ENQUIRY_ENDPOINT+'?'+q,{mode:'no-cors'}).then(function(){done();}).catch(function(){btn.disabled=false;err.textContent='Something went wrong. Please try again in a moment.';});}
 else{var t=co?('New company enquiry for JusClosers\nName: '+d.name+'\nPhone: +91 '+d.phone+'\nCompany: '+d.company+'\nIndustry: '+d.industry+'\nNeeds: '+d.need):('New enquiry for JusClosers\nName: '+d.name+'\nPhone: +91 '+d.phone+'\nInterested in: '+d.program+'\nStage: '+d.stage);if(d.message)t+='\nNote: '+d.message;window.open('https://wa.me/'+C.WHATSAPP+'?text='+encodeURIComponent(t),'_blank','noopener');done();}
 });})();
 document.querySelectorAll('[data-wa]').forEach(function(a){a.href='https://wa.me/'+C.WHATSAPP+'?text='+encodeURIComponent(a.getAttribute('data-wa'));a.target='_blank';a.rel='noopener';a.addEventListener('click',function(){if(window.fbq)fbq('track','Contact');});});
