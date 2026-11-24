@@ -8,6 +8,7 @@
     { "source": "/refund", "destination": "/refund.html" },
     { "source": "/join", "destination": "/join.html" },
     { "source": "/howtosell", "destination": "/howtosell.html" },
+    { "source": "/accelerator", "destination": "/accelerator.html" },
     { "source": "/course", "destination": "/ecep.html" }
   ]
 }
