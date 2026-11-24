@@ -6,6 +6,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/refund", "destination": "/refund.html" },
+    { "source": "/join", "destination": "/join.html" },
     { "source": "/course", "destination": "/ecep.html" }
   ]
 }

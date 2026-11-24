@@ -31,6 +31,7 @@ fbq('track','ViewContent',{
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1175970694945337&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel Code -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
@@ -44,7 +45,9 @@ window.JC = {
   DURATION_SHORT: "90 minutes",
   DURATION_MIN: 90,
   VIDEO_URL: "https://www.youtube-nocookie.com/embed/5vDepDYvToM?modestbranding=1&rel=0&controls=0&autoplay=0",  // unlisted YouTube video
-  PAY_LINK: "https://rzp.io/rzp/u5toGi5n",     // Razorpay page. Put the WhatsApp group link in its success message.
+  PAY_LINK: "https://rzp.io/rzp/u5toGi5n",     // Razorpay page fallback
+  RZP_KEY: "rzp_live_U3xNrLMogstdFw",          // Razorpay Key ID (live mode)
+  RZP_AMOUNT: 19900,                             // Amount in paise (₹199 = 19900)
   WHATSAPP: "919036317766",
   SEATS_TOTAL: 0, SEATS_TAKEN: 0,               // real numbers only. 0 hides the seat bar.
   META_PIXEL_ID: "1175970694945337",
@@ -1135,7 +1138,7 @@ document.querySelectorAll('[data-ev-short]').forEach(function(e){e.textContent=C
 document.querySelectorAll('[data-ev-day]').forEach(function(e){e.textContent=C.DURATION_SHORT+' on '+C.EVENT_DAY;});
 document.querySelectorAll('[data-dur]').forEach(function(e){e.textContent=C.DURATION;});
 document.querySelectorAll('[data-dur-short]').forEach(function(e){e.textContent=C.DURATION_SHORT;});
-document.querySelectorAll('[data-pay]').forEach(function(a){a.href=C.PAY_LINK;a.addEventListener('click',function(){if(window.fbq)fbq('track','InitiateCheckout',{value:199,currency:'INR'});});});
+document.querySelectorAll('[data-pay]').forEach(function(a){a.href='#';a.addEventListener('click',function(e){e.preventDefault();if(window.fbq)fbq('track','InitiateCheckout',{value:199,currency:'INR'});var options={key:C.RZP_KEY,amount:C.RZP_AMOUNT,currency:'INR',name:'JusClosers',description:'Real Estate Masterclass',image:'/jc-favicon.png',handler:function(response){window.location.href='/masterclass-thankyou.html?razorpay_payment_id='+response.razorpay_payment_id;},prefill:{},theme:{color:'#4FD8FF'},modal:{ondismiss:function(){}}};var rzp=new Razorpay(options);rzp.open();});});
 document.querySelectorAll('[data-wa]').forEach(function(a){a.href='https://wa.me/'+C.WHATSAPP+'?text='+encodeURIComponent(a.getAttribute('data-wa'));a.target='_blank';a.rel='noopener';});
 [['privacy','PRIVACY_URL'],['terms','TERMS_URL'],['refund','REFUND_URL']].forEach(function(p){document.querySelectorAll('[data-'+p[0]+']').forEach(function(a){a.href=C[p[1]];});});
 
