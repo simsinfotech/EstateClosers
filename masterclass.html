@@ -11,6 +11,26 @@
 <meta property="og:image" content="https://jusclosers.in/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#050E22">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1175970694945337');
+fbq('track','PageView');
+fbq('track','ViewContent',{
+  content_name:'Real Estate Masterclass',
+  content_category:'Masterclass',
+  value:199,
+  currency:'INR'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1175970694945337&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
@@ -1133,7 +1153,7 @@ var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=
 tick();setInterval(tick,1000);})();
 /* smooth anchor scroll */
 document.querySelectorAll('[data-scroll]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id&&id[0]==='#'){var t=document.querySelector(id);if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-(id==='#top'?0:60),behavior:RM?'auto':'smooth'});}}});});
-if(C.META_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',C.META_PIXEL_ID);fbq('track','PageView');fbq('track','ViewContent',{content_name:'Real Estate Masterclass',content_category:'Masterclass',value:199,currency:'INR'});}
+/* Meta Pixel InitiateCheckout is handled on [data-pay] click above */
 
 
 /* preloader */

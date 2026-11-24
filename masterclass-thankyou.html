@@ -7,14 +7,39 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<!-- Meta Pixel -->
+<!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1175970694945337');
 fbq('track','PageView');
-fbq('track','Purchase',{value:199,currency:'INR',content_name:'Real Estate Masterclass'});
+/* --- Purchase event with deduplication --- */
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var paymentId=params.get('razorpay_payment_id')||params.get('payment_id')||'';
+  var storageKey='jc_purchase_fired';
+  var alreadyFired=false;
+  try{alreadyFired=localStorage.getItem(storageKey)===paymentId&&paymentId!=='';}catch(e){}
+  if(!alreadyFired){
+    var eventId=paymentId||('jc_'+Date.now()+'_'+Math.random().toString(36).substr(2,9));
+    fbq('track','Purchase',{
+      value:199,
+      currency:'INR',
+      content_name:'Real Estate Masterclass',
+      content_ids:['masterclass-199'],
+      content_type:'product'
+    },{eventID:eventId});
+    try{if(paymentId)localStorage.setItem(storageKey,paymentId);}catch(e){}
+  }
+})();
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1175970694945337&ev=Purchase&noscript=1"/></noscript>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1175970694945337&ev=Purchase&cd[value]=199&cd[currency]=INR&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 <style>
 :root{--ink:#050E22;--cy:#4FD8FF;--gold:#FFC94D;--tx:#EEF3FB;--soft:#9FB0CC;--disp:'Plus Jakarta Sans',Inter,system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif}
 *{box-sizing:border-box;margin:0;padding:0}
